@@ -1,0 +1,319 @@
+{% extends "layout_with_breadcrumb.html" %}
+
+{% block pageTitle %}
+Start your application
+{% endblock %}
+
+{% block header %}
+<!-- Blank header with no service name for the start page -->
+{{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+tag: {
+text: "prototype"
+},
+html: 'This is not a live service. This is a service currently being designed. '
+}) }}
+
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="#">Society and culture</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link">Community and society</a>
+    </li>
+  </ol>
+</div>
+
+
+{% endblock%}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Community Ownership Fund
+    </h1>
+
+    <h3 class="govuk-heading-m">
+      Overview
+    </h3>
+
+    <p class="govuk-body">
+      The government is providing £150 million over 4 years to support community groups in the UK to take ownership of
+      assets and amenities at risk of being lost.
+    </p>
+
+    <p class="govuk-body">
+      Voluntary and community groups can bid for match funding to acquire important assets and run them for the benefit
+      of the local community.
+    </p>
+
+    <p class="govuk-body">
+      Before you start your application you should read the following:
+    </p>
+
+    <ul class="govuk-list govuk-list--bullet">
+
+      <li>
+        <a href="https://www.gov.uk/government/publications/community-ownership-fund-prospectus" class="govuk-link"
+          rel="noreferrer noopener" target="_blank">Community Ownership Fund prospectus</a>
+      </li>
+
+      <li>
+        <a href="https://www.gov.uk/government/publications/community-ownership-fund-assessment-criteria-guidance"
+          class="govuk-link" rel="noreferrer noopener" target="_blank">Guidance on the assessment criteria </a>
+      </li>
+    </ul>
+
+    <p class="govuk-!-margin-top-9 govuk-body">
+      The fund will run until 2024/25 and there will be at least 8 bidding rounds in total.
+    </p>
+
+    <p class="govuk-body">
+      The first round for applications:
+    </p>
+
+    <ul class="govuk-list govuk-list--bullet">
+
+      <li>
+        opened on 15 July 2021
+      </li>
+
+      <li>
+        closes on 13 August 2021 at 5pm
+      </li>
+
+    </ul>
+
+    <p class="govuk-!-margin-top-9 govuk-body">
+      If you do not think you will be ready for the first round, there will be future opportunities to apply. You can
+      find the key dates on the Community Ownership Fund prospectus.
+    </p>
+
+    <p class="govuk-!-margin-top-9 govuk-body">
+      When you start the application you will have the ability to:
+    </p>
+
+    <ul class="govuk-list govuk-list--bullet">
+
+      <li>
+        save and return to your application
+      </li>
+
+      <li>
+        make changes and review your answers
+      </li>
+
+    </ul>
+
+    <h3 class="govuk-!-margin-top-4 govuk-heading-m">
+      <h3 class="govuk-!-margin-top-9 govuk-heading-m">
+        Before you start
+      </h3>
+
+      <p>You will need:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>the organisation's details</li>
+        <li>access to an email address</li>
+      </ul>
+
+      <p>The online service is also available in <a href="#">Welsh (Cymraeg)</a>.
+      </p>
+
+
+      <h3 class="govuk-!-margin-top-9 govuk-heading-m">
+        Rules for applying
+      </h3>
+
+      <p class="govuk-body">
+        Please read the following rules:
+      </p>
+
+      <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+
+        <li>
+          you will be asked to email supplementary attachments as part of your online application. These must be emailed
+          within the stated deadline
+        </li>
+
+        <li>
+          we will accept joint-applications. However, we require one lead organisation to submit the proposal and enter
+          into a grant agreement with the Ministry of Housing, Communities and Local Government (MHCLG), if your grant
+          application is successful
+        </li>
+
+        <li>
+          applicants can only submit one application per community asset or amenity
+        </li>
+
+        <li>
+          applicants are not restricted from submitting multiple applications for more than one community asset or
+          amenity. However, please be aware that applications will be assessed separately
+        </li>
+
+      </ul>
+
+
+      <h3 class="govuk-!-margin-top-9 govuk-heading-m">
+        Application form contents
+      </h3>
+
+      <p class="govuk-body">
+        The following list shows you the layout of the application form. You will need to be able to answer the
+        questions
+        within each section and provide any additional information: </p>
+
+      <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+
+        <li>
+          additional documents required
+        </li>
+
+        <li>
+          check your project is eligible
+        </li>
+
+        <li>
+          tell us about your asset
+        </li>
+
+        <li>
+          value of funding required
+        </li>
+
+        <li>
+          match funding
+        </li>
+
+        <li>
+          check your organisation is eligible
+        </li>
+
+        <li>
+          organisation status
+        </li>
+
+        <li>
+          asset-locked organisation
+        </li>
+
+        <li>
+          joint applications
+        </li>
+
+        <li>
+          payments
+        </li>
+
+        <li>
+          section 1: about your organisation
+        </li>
+
+        <li>
+          section 2: Overview of your project
+        </li>
+
+        <li>
+          section 3: Strategic case
+        </li>
+
+        <li>
+          section 4: Management case
+        </li>
+
+        <li>
+          section 5: Potential to deliver community benefits
+        </li>
+
+        <li>
+          section 6: Added value to the community
+        </li>
+
+        <li>
+          section 7: Publicly owned assets
+        </li>
+
+        <li>
+          section 8: State aid declaration
+        </li>
+
+      </ul>
+
+      <p class="govuk-!-margin-top-9 govuk-body">
+        If you need to edit or revisit any sections of the application form whilst you are filling it in you will need
+        to
+        use the browser back button. Be aware that if you use the browser back button, the screen that you are currently
+        viewing will not be saved.
+      </p>
+
+      <p class="govuk-body">
+        You must be aware that once you have submitted your application form you will not be able to go back and edit,
+        add
+        or change any of the sections.
+      </p>
+
+      <h3 class="govuk-!-margin-top-9 govuk-heading-m">
+        Data protection
+      </h3>
+
+      <p class="govuk-body">
+        Please read our <a href="https://www.gov.uk/government/publications/community-ownership-fund-privacy-notice"
+          class="govuk-link" rel="noreferrer noopener" target="_blank">full data privacy statement</a>
+      </p>
+
+
+      <div class="govuk-!-margin-top-9">
+
+        <a href="/version-2/additional-docs" role="button" draggable="false"
+          class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"
+          data-module="govuk-button">
+          Start application
+          <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19"
+            viewBox="0 0 33 40" role="presentation" focusable="false">
+            <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
+          </svg>
+        </a>
+
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Get help with your application
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p class="govuk-body">
+              If you’re having problems accessing the form or need help digitally then please ring our service desk
+              using
+              the following number 0203 829 0743.
+            </p>
+
+            <p class="govuk-body">
+              The service desk is open from 9am to 5pm Monday to Friday (excluding Bank Holidays).
+            </p>
+
+            <p class="govuk-body">
+              If you have any questions with regards to the application form or need any help understanding the policy
+              please email us at <a href="#" class="govuk-link" rel="noreferrer noopener"
+                target="_blank">COF@communities.gov.uk</a>
+            </p>
+
+          </div>
+
+        </details>
+
+      </div>
+
+  </div>
+  {% endblock %}

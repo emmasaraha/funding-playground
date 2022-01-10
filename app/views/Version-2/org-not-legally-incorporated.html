@@ -1,0 +1,81 @@
+{% extends "layout_with_breadcrumb.html" %}
+
+{% block pageTitle %}
+Start your application
+{% endblock %}
+
+{% block header %}
+<!-- Blank header with no service name for the start page -->
+{{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+tag: {
+text: "prototype"
+},
+html: 'This is not a live service. This is a service currently being designed. '
+}) }}
+
+<div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="#">Society and culture</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link">Community and society</a>
+        </li>
+    </ol>
+</div>
+
+
+{% endblock%}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+            You told us your organisation is not legally incorporated
+        </h1>
+
+        <p class="govuk-body">
+            For this round of funding your organisation must be legally incorporated. Read more information about the
+            eligibility criteria.
+            <a href="https://www.gov.uk/government/publications/community-ownership-fund-prospectus/community-ownership-fund-prospectus#eligibility-criteria" class="govuk-link" rel="noreferrer noopener" target="_blank">eligibility criteria
+            </a>
+        </p>
+
+        <p class="govuk-body">
+            There will be other opportunities to apply for funding after this round.
+            <a href="https://www.gov.uk/government/publications/community-ownership-fund-prospectus/community-ownership-fund-prospectus#overview"
+                class="govuk-link" rel="noreferrer noopener" target="_blank"> For more information about when
+                subsequent rounds open</a>, please read the guidance.
+        </p>
+
+        <p class="govuk-body">
+            If you’d like further assistance or support with your application to help with the eligibility criteria,
+            then email
+            <a href="mailto:COF@communitites.gov.uk?subject=Support%20with%20your%20COF%20application"
+                class="govuk-link" rel="noreferrer noopener" target="_blank">COF@communities.gov.uk
+            </a>
+        </p>
+
+
+        <div>
+            <a href="/version-2/project-eligibility" role="button" draggable="false"
+                class="govuk-button govuk-!-margin-top-6 govuk-!-margin-bottom-8" data-module="govuk-button">
+                Continue
+            </a>
+        </div>
+
+    </div>
+
+
+</div>
+{% endblock %}

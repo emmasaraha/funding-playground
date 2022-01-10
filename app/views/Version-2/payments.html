@@ -1,0 +1,80 @@
+{% extends "layout_with_breadcrumb.html" %}
+
+{% block pageTitle %}
+Start your application
+{% endblock %}
+
+{% block header %}
+<!-- Blank header with no service name for the start page -->
+{{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+tag: {
+text: "prototype"
+},
+html: 'This is not a live service. This is a service currently being designed. '
+}) }}
+
+<div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="#">Society and culture</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link">Community and society</a>
+        </li>
+    </ol>
+</div>
+
+
+{% endblock%}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+            Payments
+        </h1>
+
+        <p class="govuk-body">
+            If successful, as part of the conditions of the award for funding, milestones and project targets will be
+            agreed, alongside standard monitoring and review periods.
+        </p>
+
+        <p class="govuk-body">
+            Capital and revenue grants will be paid on agreed milestones. Capital grants required for purchase will be
+            paid on completion, subject to conditions.
+        </p>
+
+        <p>
+            This will be set out in a formal grant agreement. All successful applicants will go through
+            additional due diligence and fraud safeguarding checks.
+        </p>
+
+        <p>
+            Grants must be used for the purpose intended as set out in the conditions for award. This will be
+            subject to monitoring and final review.  Failure to comply with the conditions of award could lead
+            to funding being retracted or clawed-back.
+        </p>
+
+
+        <div>
+            <a href="/version-2/sport-asset" role="button" draggable="false"
+                class="govuk-button govuk-!-margin-top-4 govuk-!-margin-bottom-8" data-module="govuk-button">
+                Continue
+            </a>
+        </div>
+
+    </div>
+
+
+</div>
+{% endblock %}

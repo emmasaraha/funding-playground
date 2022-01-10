@@ -1,0 +1,156 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Task list
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h2 class="govuk-heading-l">
+        Version 0.1
+      </h2>
+      <h3 class="govuk-heading-m">Labels and probability of change</h3>
+      <p>Our confidence relates to the level of risk. These tags are high (colour coded red), medium (yellow) and low (green). They’re based on 3 things:
+
+      <ol class="govuk-list govuk-list--number">
+        <li>The range of participants we’ve researched with.</li>
+        <li>The design pattern’s prevalence – who else uses it?</li>
+        <li>Our understanding of the question, why we're asking it and how we use it.</li>        
+      </ol>
+
+      <p>These tags quickly illustrate how confident we are with an interaction – what parts of the service should not change, could change or definitely will change.</p></p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>No research, changes are probable =
+          <span class="research-tag research-tag-high">High</span>
+        </li>
+        <li>Some research done, some changes are possible =
+          <span class="research-tag research-tag-medium">Medium</span>
+        </li>
+        <li>Thoroughly researched, confident in pattern =
+          <span class="research-tag research-tag-low">Low</span>
+        </li>
+      </ul>
+
+      <ol class="govuk-list">
+        <li><h3>Baseline Application Questions</h3></li>
+        <ul class="govuk-list govuk-list--bullet">
+          <h4 class="govuk-heading-m">About you</h4>
+          <li>
+            <a class="govuk-link" href="#">Full name</a>
+            <span class="research-tag research-tag-low">Low</span>
+          </li>
+          <li>
+            <a class="govuk-link" href="#">Email</a>
+            <span class="research-tag research-tag-low">Low</span>
+          </li>
+          <li>
+            <a class="govuk-link" href="#">Telephone number</a>
+            <span class="research-tag research-tag-low">Low</span>
+          </li>
+          <li>
+            <a class="govuk-link" href="#">Website</a>
+            <span class="research-tag research-tag-medium">Medium</span>
+          </li>
+        </ul>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <h4 class="govuk-heading-m">About your organisation</h4>
+          <li>
+            <a class="govuk-link" href="#">Organisation name</a>
+            <span class="research-tag research-tag-low">Low</span>          
+          </li>
+          <li>
+            <a class="govuk-link" href="#">Organisation address</a>
+            <span class="research-tag research-tag-medium">Medium</span>
+          </li>
+          <li>
+            <a class="govuk-link" href="#">Type of organisation</a>
+            <span class="research-tag research-tag-low">Low</span>
+          </li>
+          <li>
+            <a class="govuk-link" href="#">Have you delivered projects like this before?</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="#">Accountant name</a>
+            <span class="research-tag research-tag-low">Low</span>
+          </li>
+          <li>
+            <a class="govuk-link" href="#">Responsible person name</a>
+            <span class="research-tag research-tag-low">Low</span>
+          </li>
+          <li>
+            <a class="govuk-link" href="#">Do you have endorsements to support your application?</a>
+            <span class="research-tag research-tag-low">Low</span>
+          </li>
+          <li>
+            <a class="govuk-link" href="#">Who is endorsing your application</a>
+            <span class="research-tag research-tag-medium">Medium</span>
+          </li>
+        </ul>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <h4 class="govuk-heading-m">About your project</h4>
+          <li>
+            <a class="govuk-link" href="#">Project name</a>
+            <span class="research-tag research-tag-low">Low</span>
+          </li>
+          <li>
+            <a class="govuk-link" href="#">Project location</a>
+            <span class="research-tag research-tag-low">Low</span>
+          </li>
+          <li>
+            <a class="govuk-link" href="#">Project sector</a>
+            <span class="research-tag research-tag-medium">Medium</span>
+          </li>
+          <li>
+            <a class="govuk-link" href="#">Project description</a>
+            <span class="research-tag research-tag-high">High</span>
+          </li>
+          <li>
+            <a class="govuk-link" href="#">Project summary</a>
+            <span class="research-tag research-tag-high">High</span>
+          </li>
+          <li>
+            <a class="govuk-link" href="#">How much money do you need</a>
+            <span class="research-tag research-tag-low">Low</span>
+          </li>
+          <li>
+            <a class="govuk-link" href="#">Do you want funding for</a>
+            <span class="research-tag research-tag-medium">Medium</span>
+          </li>
+          <li>
+            <a class="govuk-link" href="#">What policy aims will your project deliver against</a>
+            <span class="research-tag research-tag-medium">Medium</span>
+          </li>
+        </ul>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <h4 class="govuk-heading-m">Declarations</h4>
+          <li>
+            <a class="govuk-link" href="#">Would funding your organisation be classed as State Aid?</a>
+            <span class="research-tag research-tag-high">High</span>
+          </li>
+          <li>
+            <a class="govuk-link" href="#">Describe how your project will impact people with protected characteristics?</a>
+            <span class="research-tag research-tag-high">High</span>
+          </li>
+          <li>
+            <a class="govuk-link" href="#">Does your application comply with all relevant environmental standards?</a>
+            <span class="research-tag research-tag-high">High</span>
+          </li>
+          <li>
+            <a class="govuk-link" href="#">Data protection</a>
+            <span class="research-tag research-tag-low">Low</span>
+          </li>
+        </ul>
+    
+        
+      </ol>
+      
+    </div>
+  </div>
+
+{% endblock %}

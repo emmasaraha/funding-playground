@@ -1,0 +1,101 @@
+{% extends "layout_with_breadcrumb.html" %}
+
+{% block pageTitle %}
+Start your application
+{% endblock %}
+
+{% block header %}
+<!-- Blank header with no service name for the start page -->
+{{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+tag: {
+text: "prototype"
+},
+html: 'This is not a live service. This is a service currently being designed. '
+}) }}
+
+<div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="#">Society and culture</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link">Community and society</a>
+        </li>
+    </ol>
+</div>
+
+
+{% endblock%}
+
+{% block content %}
+<div class="govuk-grid-row">
+    
+    <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-fieldset__heading">
+                        Are you applying about a sporting asset?
+                    </h1>
+                </legend>
+                <div id="changed-name-hint" class="govuk-!-margin-top-4 govuk-hint">
+                    If you are applying to help establish a community-owned sports club or help buy a sports club or
+                    sporting facilities at risk of being lost, you can bid for up to £1,000,000 of match capital funding.
+                </div>
+                <div class="govuk-!-margin-top-6 govuk-radios govuk-radios--inline">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio"
+                            value="yes">
+                        <label class="govuk-label govuk-radios__label" for="changed-name">
+                            Yes
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio"
+                            value="no">
+                        <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                            No
+                        </label>
+                    </div>
+                </div>
+
+            </fieldset>
+        </div>
+
+        <div>
+            <a href="/version-2/value-of-funding-sport" role="button" draggable="false"
+                class="govuk-button govuk-!-margin-top-4 govuk-!-margin-bottom-8" data-module="govuk-button">
+                Save and continue
+            </a>
+        </div>
+
+        <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                    What is match capital funding?
+                </span>
+            </summary>
+            <div class="govuk-details__text">
+                <p class="govuk-body">
+                    TBC?
+                </p>
+
+            </div>
+
+        </details>
+
+    </div>
+
+
+</div>
+{% endblock %}

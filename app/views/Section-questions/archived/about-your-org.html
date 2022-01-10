@@ -1,0 +1,155 @@
+{% extends "layout_with_breadcrumb.html" %}
+
+{% block pageTitle %}
+Start your application
+{% endblock %}
+
+{% block header %}
+<!-- Blank header with no service name for the start page -->
+{{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+tag: {
+text: "prototype"
+},
+html: 'This is not a live service. This is a service currently being designed. '
+}) }}
+
+{% endblock%}
+
+{% block content %}
+<div class="govuk-grid-row govuk-!-margin-top-4">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">About your organisation</h1>
+
+        <div class="govuk-form-group govuk-!-margin-top-7">
+            <label class="govuk-label govuk-label--m" for="passport-number">
+                Organisation name
+            </label>
+            <input class="govuk-input" id="event-name" name="event-name" type="text">
+        </div>
+
+        <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h2 class="govuk-label govuk-label--m">
+                    Organisation address
+                </h2>
+            </legend>
+
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="address-line-1">
+                    Building and street <span class="govuk-visually-hidden">line 1 of 2</span>
+                </label>
+                <input class="govuk-input" id="address-line-1" name="address-line-1" type="text"
+                    autocomplete="address-line1">
+            </div>
+
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="address-line-2">
+                    <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
+                </label>
+                <input class="govuk-input" id="address-line-2" name="address-line-2" type="text"
+                    autocomplete="address-line2">
+            </div>
+
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="address-town">
+                    Town or city
+                </label>
+                <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text"
+                    autocomplete="address-level2">
+            </div>
+
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="address-county">
+                    County
+                </label>
+                <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="address-county"
+                    type="text">
+            </div>
+
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="address-postcode">
+                    Postcode
+                </label>
+                <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode"
+                    type="text" autocomplete="postal-code">
+            </div>
+
+        </fieldset>
+
+
+        <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h2 class="govuk-label govuk-label--m">
+                        Type of organisation
+                    </h2>
+                </legend>
+                <div id="waste-hint" class="govuk-hint">
+                    Select all that apply.
+                </div>
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox"
+                            value="carcasses">
+                        <label class="govuk-label govuk-checkboxes__label" for="waste">
+                            Local authority
+                        </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+                        <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                            Mayoral authority
+                        </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                        <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                            Limited company
+                        </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox"
+                            value="carcasses">
+                        <label class="govuk-label govuk-checkboxes__label" for="waste">
+                            Registered charity
+                        </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+                        <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                            Social enterprise
+                        </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                        <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                            Other
+                        </label>
+                    </div>
+                </div>
+
+            </fieldset>
+        </div>
+
+
+
+
+        <div>
+            <a href="/version-2/sport-asset" role="button" draggable="false"
+                class="govuk-button govuk-!-margin-top-4 govuk-!-margin-bottom-8" data-module="govuk-button">
+                Save and continue
+            </a>
+        </div>
+
+    </div>
+
+
+</div>
+{% endblock %}

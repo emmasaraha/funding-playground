@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Confirmation page example
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-panel govuk-panel--confirmation">
+            <h1 class="govuk-panel__title">The project is suitable to apply for [name of fund]</h1>
+            <div class="govuk-panel__body">
+                Your reference number<br><strong>HDJ2123F</strong>
+            </div>
+        </div>
+
+        <p>
+            We have sent you a confirmation email.
+        </p>
+
+        <h2 class="govuk-heading-m">What happens next</h2>
+        <p>You can now start to make your application for [name of fund].</p>
+
+        <p class="govuk-!-margin-top-9 govuk-body govuk-!-font-weight-bold">
+            You will have the ability to:
+        </p>
+
+        <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+
+            <li>
+                save and return to your application
+            </li>
+
+            <li>
+                make changes and review your answers
+            </li>
+
+        </ul>
+
+        <p><a href="https://www.gov.uk/service-manual/user-centred-design/resources/patterns/feedback-pages.html">What
+                did you think of this service?</a> (takes 30 seconds)</p>
+
+        <div>
+            <a href="/version-2/sport-asset" role="button" draggable="false"
+                class="govuk-button govuk-!-margin-top-6 govuk-!-margin-bottom-8" data-module="govuk-button">
+                Continue application
+            </a>
+        </div>
+
+
+        <p class="govuk-!-margin-top-4"><a
+                href="https://www.gov.uk/service-manual/user-centred-design/resources/patterns/feedback-pages.html">Search
+                for other fund opportunities</a></p>
+
+
+    </div>
+</div>
+
+{% endblock %}

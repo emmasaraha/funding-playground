@@ -1,0 +1,128 @@
+{% extends "layout_with_breadcrumb.html" %}
+
+{% block pageTitle %}
+Start your application
+{% endblock %}
+
+{% block header %}
+<!-- Blank header with no service name for the start page -->
+{{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+tag: {
+text: "prototype"
+},
+html: 'This is not a live service. This is a service currently being designed. '
+}) }}
+
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="#">Society and culture</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link">Community and society</a>
+    </li>
+  </ol>
+</div>
+
+
+{% endblock%}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Match funding</h1>
+
+
+    <p class="govuk-!-margin-top-2 govuk-body">
+      Applicants will be required to raise other sources of funding, alongside investment from the Community Ownership
+      Fund. Having a range of funders contributing to a project can demonstrate the quality of the project and the
+      support within the community.
+    </p>
+
+
+    <p class="govuk-body">
+      The Community Ownership Fund will contribute up to 50% of total capital required.
+    </p>
+
+    <p class="govuk-body">
+      Applicants will need to set out:
+    </p>
+
+    <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+
+      <li>
+        the total project costs
+      </li>
+
+      <li>
+        funding already secured
+      </li>
+
+      <li>
+        plans to raise any additional funding needed
+      </li>
+
+    </ul>
+
+    <p class="govuk-body">
+      For more guidance on match funding you can read the <a
+        href="https://www.gov.uk/government/publications/community-ownership-fund-prospectus/community-ownership-fund-prospectus#funding-and-support"
+        class="govuk-link" rel="noreferrer noopener" target="_blank"> Funding and Support section</a> of the Community
+      Ownership Fund prospectus. </p>
+
+    <p class="govuk-body">
+      Applicants are not required to have all match funding sources secured at the time of project application. However,
+      successful applicants will need to demonstrate that they are able to secure the full project funds within
+      <strong>6 months of application</strong> deadline.
+    </p>
+
+    <div class="govuk-!-margin-top-9 govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h1 class="govuk-fieldset__heading">
+                  Do you think your organisation will have the required match funding in place and on time, if
+                  your application is successful? </h1>
+          </legend>
+          <div class="govuk-!-margin-top-4 govuk-radios govuk-radios--inline">
+              <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio"
+                      value="yes">
+                  <label class="govuk-label govuk-radios__label" for="changed-name">
+                      Yes
+                  </label>
+              </div>
+              <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio"
+                      value="no">
+                  <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                      No
+                  </label>
+              </div>
+          </div>
+
+      </fieldset>
+  </div>
+
+
+    <div>
+      <a href="/version-2/sport-asset" role="button" draggable="false"
+        class="govuk-button govuk-!-margin-top-4 govuk-!-margin-bottom-8" data-module="govuk-button">
+        Continue
+      </a>
+    </div>
+
+  </div>
+
+
+</div>
+{% endblock %}

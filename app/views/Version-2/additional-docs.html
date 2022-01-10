@@ -1,0 +1,159 @@
+{% extends "layout_with_breadcrumb.html" %}
+
+{% block pageTitle %}
+Start your application
+{% endblock %}
+
+{% block header %}
+<!-- Blank header with no service name for the start page -->
+{{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+tag: {
+text: "prototype"
+},
+html: 'This is not a live service. This is a service currently being designed. '
+}) }}
+
+<div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="#">Society and culture</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link">Community and society</a>
+        </li>
+    </ol>
+</div>
+
+
+{% endblock%}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+            Additional documents required
+        </h1>
+
+        <p class="govuk-body">
+            You will also be required to send us essential information with your application form.
+        </p>
+
+        <p class="govuk-body">
+            You will send these documents once you've completed this form.
+        </p>
+
+        <p class="govuk-body">
+            Your application will be considered incomplete without the required documents. Please factor in the time it
+            will take you to send these documents to ensure you can submit your application on time.
+        </p>
+
+
+        <div class="govuk-!-margin-top-9 govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+                <span class="govuk-warning-text__assistive">Warning</span>
+                All applicants must send the following documents
+            </strong>
+        </div>
+
+        <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+
+            <li>
+                your governing documents or articles of association
+            </li>
+
+            <li>
+                your financial accounts and/or management accounts. If you are a newly formed organisation you will need
+                to provide projected income and expenditure from the 12 months from when your organisation was
+                established, as part of your management case
+            </li>
+
+            <li>
+                proof the asset is at risk and options for sale/transfer – see above
+            </li>
+
+            <li>
+                full business plan
+            </li>
+
+        </ul>
+
+        <h3 class="govuk-!-margin-top-9 govuk-heading-m">
+            If available, these documents should also be added to your application
+        </h3>
+
+        <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+
+            <li>
+                an independent valuation of the asset in the last 6 months (if you don’t currently have this, it will
+                need to be provided before we award capital funding)
+            </li>
+
+            <li>
+                a structural survey and feasibility studies (if you don’t currently have this, funding may be provided
+                to pay for these as part of your capital grant)
+            </li>
+
+            <li>
+                additional evidence on plans, agreement in principle or secured matched funding – optional to provide at
+                this stage though all sources of matched funding identified in your Business Plan will need to be
+                verified prior to capital draw-down
+            </li>
+
+        </ul>
+
+        <details class="govuk-!-margin-top-9 govuk-!-margin-bottom-3 govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                    What if a transfer or sale has already been agreed?
+                </span>
+            </summary>
+            <div class="govuk-details__text">
+                <p>
+                    You will need to provide all legal documents (including freehold and leasehold contracts or heads of
+                    terms)
+                </p>
+
+            </div>
+
+        </details>
+
+        <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                    What if your asset is publicly owned?
+                </span>
+            </summary>
+            <div class="govuk-details__text">
+
+                <p>
+                    You will need to provide a supporting statement from the public owner
+                </p>
+
+            </div>
+
+        </details>
+
+
+        <div>
+            <a href="/version-2/project-eligibility" role="button" draggable="false"
+                class="govuk-button govuk-!-margin-top-9 govuk-!-margin-bottom-8" data-module="govuk-button">
+                Continue
+            </a>
+        </div>
+
+    </div>
+
+
+</div>
+{% endblock %}

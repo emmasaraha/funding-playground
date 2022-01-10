@@ -1,0 +1,163 @@
+{% extends "layout_with_breadcrumb.html" %}
+
+{% block pageTitle %}
+Start your application
+{% endblock %}
+
+{% block header %}
+<!-- Blank header with no service name for the start page -->
+{{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+tag: {
+text: "prototype"
+},
+html: 'This is not a live service. This is a service currently being designed. '
+}) }}
+
+<div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="#">Society and culture</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link">Community and society</a>
+        </li>
+    </ol>
+</div>
+
+
+{% endblock%}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-fieldset__heading">
+                        Which of the following best describes the asset which is the subject of your application?
+                    </h1>
+                </legend>
+
+                <div id="waste-hint" class=" govuk-!-margin-top-4 govuk-hint">
+                    Select all that apply.
+                </div>
+
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox"
+                            value="carcasses">
+                        <label class="govuk-label govuk-checkboxes__label" for="waste">
+                            Arts venue or gallery
+                        </label>
+                    </div>
+
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+                        <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                            Cinema or theatre
+                        </label>
+                    </div>
+
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                        <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                            Community centre
+                        </label>
+                    </div>
+
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                        <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                            Heritage building
+                        </label>
+                    </div>
+
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                        <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                            Museum
+                        </label>
+                    </div>
+
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                        <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                            Music venue
+                        </label>
+                    </div>
+
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                        <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                            Park
+                        </label>
+                    </div>
+
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                        <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                            Post office building
+                        </label>
+                    </div>
+
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                        <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                            Pub
+                        </label>
+                    </div>
+
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                        <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                            Shop
+                        </label>
+                    </div>
+
+
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="other" name="other" type="checkbox" value="email"
+                            data-aria-controls="conditional-other">
+                        <label class="govuk-label govuk-checkboxes__label" for="asset-other">
+                            Other
+                        </label>
+                    </div>
+
+                    <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                        id="conditional-other">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="asset-other">
+                                briefly describe the asset
+                            </label>
+                            <input class="govuk-input govuk-!-width-full" id="asset-other" name="asset-other"
+                                type="email" spellcheck="false" autocomplete="other">
+                        </div>
+
+
+                    </div>
+
+            </fieldset>
+        </div>
+
+        <div>
+            <a href="/version-2/sport-asset" role="button" draggable="false"
+                class="govuk-button govuk-!-margin-top-9 govuk-!-margin-bottom-8" data-module="govuk-button">
+                Save and continue
+            </a>
+        </div>
+
+    </div>
+
+
+</div>
+{% endblock %}

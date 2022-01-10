@@ -1,0 +1,132 @@
+{% extends "layout_with_breadcrumb.html" %}
+
+{% block pageTitle %}
+Start your application
+{% endblock %}
+
+{% block header %}
+<!-- Blank header with no service name for the start page -->
+{{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+tag: {
+text: "prototype"
+},
+html: 'This is not a live service. This is a service currently being designed. '
+}) }}
+
+<div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="#">Society and culture</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link">Community and society</a>
+        </li>
+    </ol>
+</div>
+
+
+{% endblock%}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+            Check your project is eligible?
+        </h1>
+
+        <p class="govuk-body">
+            Eligible projects are those which seek to save a community asset or amenity which is currently at risk of
+            being lost.
+        </p>
+
+        <p class="govuk-!-margin-top-9 govuk-body govuk-!-font-weight-bold">
+            You must be able to demonstrate that:
+        </p>
+
+        <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+
+            <li>
+                the asset or amenity is at risk
+            </li>
+
+            <li>
+                this might be from closure, sale, neglect or unsustainable operations due to its business model
+            </li>
+
+            <li>
+                there is a realistic chance that the asset or amenity could be sold or transferred into community
+                ownership within 6 months of the application deadline
+            </li>
+
+            <li>
+                the community asset or amenity has a demonstrable community use and value which furthers the social
+                wellbeing and social interests of the community
+            </li>
+
+            <li>
+                if the community asset is currently derelict it must have had a community use within the last 5 years
+            </li>
+
+            <li>
+                you can show how you can ‘match’ the capital grant from the Community Ownership Fund with other funding
+                sources including
+            </li>
+
+            <li>
+                for example, other loans, grants or community shares
+            </li>
+
+            <li>
+                you will have full capital funding in place within 6 months of the application deadline
+            </li>
+
+
+        </ul>
+
+
+
+
+        <details class="govuk-!-margin-top-9 govuk-!-margin-bottom-3 govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                    What is match funding?
+                </span>
+            </summary>
+            <div class="govuk-details__text">
+                <p>
+                    The Community Ownership Fund will contribute up to 50% of the total capital required.
+                </p>
+
+                <p>
+                    Up to £250,000 match-funded capital will be available for most asset types. Exceptionally bidders
+                    will be able to make the case for up to £1 million match-funding to help establish a community-owned
+                    sports club or help buy a sports club or ground at risk of being lost without community
+                    intervention.
+                </p>
+
+            </div>
+
+        </details>
+
+        <div>
+            <a href="/version-2/org-eligible" role="button" draggable="false"
+                class="govuk-button govuk-!-margin-top-9 govuk-!-margin-bottom-8" data-module="govuk-button">
+                Continue
+            </a>
+        </div>
+
+    </div>
+
+
+</div>
+{% endblock %}

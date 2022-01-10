@@ -1,0 +1,104 @@
+{% extends "layout_with_breadcrumb.html" %}
+
+{% block pageTitle %}
+Start your application
+{% endblock %}
+
+{% block header %}
+<!-- Blank header with no service name for the start page -->
+{{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+tag: {
+text: "prototype"
+},
+html: 'This is not a live service. This is a service currently being designed. '
+}) }}
+
+<div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="#">Society and culture</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link">Community and society</a>
+        </li>
+    </ol>
+</div>
+
+
+{% endblock%}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+            Check your organisation is eligible?
+        </h1>
+
+        <p class="govuk-!-margin-top-9 govuk-body govuk-!-font-weight-bold">
+            To be eligible to apply to the Community Ownership Fund you must be:
+        </p>
+
+        <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+
+            <li>
+                legally incorporated (for this round of funding we will not fund unincorporated organisations)            
+            </li>
+
+            <li>
+                set up to deliver charitable purpose, social purpose or public benefit            
+            </li>
+
+            <li>
+                an asset-locked organisation            
+            </li>
+
+            <li>
+                able to show you are accountable to the local place and/or community you represent            
+            </li>
+
+        </ul>
+
+
+
+
+        <details class="govuk-!-margin-top-9 govuk-!-margin-bottom-3 govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                    What is an asset-locked organisation?
+                </span>
+            </summary>
+            <div class="govuk-details__text">
+                <p>
+                    An ‘asset-lock’ requires that the organisation’s assets (including profit generated) are restricted for charitable purpose or community benefit.                
+                </p>
+
+                <p>
+                    This includes restrictions on any future sale or transfer of assets, to ensure they are used for community benefit or charitable purpose.                
+                </p>
+
+            </div>
+
+        </details>
+
+        <div>
+            <a href="/version-2/sport-asset" role="button" draggable="false"
+                class="govuk-button govuk-!-margin-top-9 govuk-!-margin-bottom-8" data-module="govuk-button">
+                Continue
+            </a>
+        </div>
+
+    </div>
+
+
+</div>
+{% endblock %}
