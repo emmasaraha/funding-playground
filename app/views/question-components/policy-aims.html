@@ -1,0 +1,84 @@
+{% extends "layout_with_breadcrumb.html" %}
+
+{% block pageTitle %}
+  Emma's fsd playground
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="policy-aims-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            What policy aims will your project deliver against?
+          </legend>
+          <div id="policy-aims-hint" class="govuk-hint">
+            Select all that apply.
+          </div>
+          
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="policy-aims-1" name="policy-aims" type="checkbox" value="net-zero">
+              <label class="govuk-label govuk-checkboxes__label" for="policy-aims-1">
+                Net zero
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="policy-aims-2" name="policy-aims" type="checkbox" value="regeneration">
+              <label class="govuk-label govuk-checkboxes__label" for="policy-aims-2">
+                Regeneration
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="policy-aims-3" name="policy-aims" type="checkbox" value="community">
+              <label class="govuk-label govuk-checkboxes__label" for="policy-aims-3">
+                Support local community
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="policy-aims-4" name="policy-aims" type="checkbox" value="skills">
+              <label class="govuk-label govuk-checkboxes__label" for="policy-aims-4">
+                Level up skills
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="policy-aims-5" name="policy-aims" type="checkbox" value="climate">
+              <label class="govuk-label govuk-checkboxes__label" for="policy-aims-5">
+                Fight climate change
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="policy-aims-6" name="policy-aims" type="checkbox" value="trade" data-aria-controls="conditional-policy-aims-6">
+              <label class="govuk-label govuk-checkboxes__label" for="policy-aims-6">
+                Increase trade and prosperity
+              </label>
+            </div>
+            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-policy-aims-6">
+              <div class="govuk-form-group" data-maxwords="150">
+                <label class="govuk-label" for="expected-impact">
+                  What is the expected impact of your project?
+                </label>
+                <textarea class="govuk-textarea govuk-js-character-count" id="expected-impact" name="expected-impact" rows="5" aria-describedby="word-count-info"></textarea>
+              </div>
+              <div id="word-count-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
+                You can enter up to 150 words
+              </div>
+            </div>
+          
+          </div>
+      
+        </fieldset>
+      </div>
+    </div>
+          
+        
+  </div>
+{% endblock %}

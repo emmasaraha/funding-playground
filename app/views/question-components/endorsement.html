@@ -1,0 +1,47 @@
+{% extends "layout_with_breadcrumb.html" %}
+
+{% block pageTitle %}
+  Emma's fsd playground
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            Do you have endorsements to support your application?
+          </legend>
+          <div id="changed-name-hint" class="govuk-hint">
+            hint hint hint
+          </div>
+          <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="endorsement-yes" name="endorsement" type="radio" value="true">
+              <label class="govuk-label govuk-radios__label" for="endorsement">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="endorsement-no" name="endorsement" type="radio" value="false">
+              <label class="govuk-label govuk-radios__label" for="endorsement-2">
+                No
+              </label>
+            </div>
+          </div>
+      
+        </fieldset>
+      </div>   
+
+    </div>
+          
+        
+  </div>
+{% endblock %}

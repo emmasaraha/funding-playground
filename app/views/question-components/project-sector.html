@@ -1,0 +1,32 @@
+{% extends "layout_with_breadcrumb.html" %}
+
+{% block pageTitle %}
+  Emma's fsd playground
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--m" for="project-sector">
+          Project sector
+        </label>
+        <select class="govuk-select" id="sort" name="project-sector">
+          <option value="published">published</option>
+          <option value="updated" selected>updated</option>
+          <option value="views">views</option>
+        </select>
+      </div>
+
+    </div>
+          
+        
+  </div>
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends "layout_with_breadcrumb.html" %}
+
+{% block pageTitle %}
+  Emma's fsd playground
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            Do you want funding for:
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="funding-reason" name="funding-reason" type="radio" value="capital-expenditure" aria-describedby="funding-reason-hint">
+              <label class="govuk-label govuk-radios__label" for="funding-reason">
+                capital expenditure
+              </label>
+              <div id="funding-reason-hint" class="govuk-hint govuk-radios__hint">
+                The purchase of property or equipment
+              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="funding-reason-2" name="funding-reason" type="radio" value="services">
+              <label class="govuk-label govuk-radios__label" for="funding-reason-2">
+                services
+              </label>
+              <div id="funding-reason-2-hint" class="govuk-hint govuk-radios__hint">
+                The provision of services
+              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="funding-reason-3" name="funding-reason" type="radio" value="subsidy">
+              <label class="govuk-label govuk-radios__label" for="funding-reason-3">
+                subsidy
+              </label>
+              <div id="funding-reason-3-hint" class="govuk-hint govuk-radios__hint">
+                Subsidising an existing organisation
+              </div>
+            </div>
+          </div>
+      
+        </fieldset>
+      </div>
+          
+  </div>
+  </div>
+{% endblock %}

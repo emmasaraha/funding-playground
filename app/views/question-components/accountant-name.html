@@ -1,0 +1,29 @@
+{% extends "layout_with_breadcrumb.html" %}
+
+{% block pageTitle %}
+  Emma's fsd playground
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--m" for="accountant-name">
+          Your accountant
+        </label>
+        <div id="accountant-name-hint" class="govuk-hint">
+            Name of the accountant for your organisation
+        </div>
+        <input class="govuk-input" id="accountant-name" name="accountant-name" type="text" spellcheck="false" aria-describedby="accountant-name-hint">
+    </div>
+          
+        
+  </div>
+{% endblock %}

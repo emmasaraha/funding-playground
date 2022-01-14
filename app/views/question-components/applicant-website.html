@@ -1,0 +1,26 @@
+{% extends "layout_with_breadcrumb.html" %}
+
+{% block pageTitle %}
+  Emma's fsd playground
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      
+        <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--m" for="website">
+                Website
+            </label>
+            <input class="govuk-input govuk-!-width-one-half" id="website" name="website" type="text">
+        </div>
+    </div>        
+  </div>
+{% endblock %}
+

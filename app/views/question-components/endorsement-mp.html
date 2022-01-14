@@ -1,0 +1,44 @@
+{% extends "layout_with_breadcrumb.html" %}
+
+{% block pageTitle %}
+  Emma's fsd playground
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            Who is endorsing your application?
+          </legend>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="endorsement-mp" name="endorsement-mp" type="checkbox" value="member-parliament" data-aria-controls="conditional-endorsement">
+              <label class="govuk-label govuk-checkboxes__label" for="endorsement-mp">
+                Member of Parliament (MP)
+              </label>
+            </div>
+            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-endorsement">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="file-upload-1">
+                    Upload a file
+                </label>
+                <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+            </div>
+      
+        </fieldset>
+      </div>
+
+    </div>
+          
+        
+  </div>
+{% endblock %}
