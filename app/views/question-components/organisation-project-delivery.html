@@ -17,44 +17,10 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      
-      
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-            Have you delivered projects like this before?
-          </legend>
-          <div class="govuk-radios" data-module="govuk-radios">
 
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="organisation-delivery-1" name="organisation-delivery" type="radio" value="yes" data-aria-controls="conditional-organisation-delivery">
-              <label class="govuk-label govuk-radios__label" for="organisation-delivery-1">
-                Yes
-              </label>
-            </div>
+  {% include "includes/questions/organisation-project-delivery.html" %}
 
-            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-organisation-delivery">
-              <div class="govuk-form-group">
-                <label class="govuk-label" for="organisation-delivery-upload">
-                  Upload a file
-                </label>
-                <input class="govuk-file-upload" id="organisation-delivery-upload" name="organisation-delivery-upload" type="file">
-              </div>
-            </div>
-
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="organisation-delivery-2" name="organisation-delivery" type="radio" value="no">
-              <label class="govuk-label govuk-radios__label" for="organisation-delivery-2">
-                No
-              </label>
-            </div>
-
-          </div>
-
-      </fieldset>
     </div>
-    </div>
-          
-        
   </div>
+
 {% endblock %}

@@ -16,13 +16,8 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      
-      <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--m" for="project-name">
-          Project name
-        </label>
-        <input class="govuk-input" id="project-name" name="project-name" type="text" spellcheck="false">
-      </div>
+
+      {% include "includes/questions/project-name.html" %}
 
     </div>     
   </div>

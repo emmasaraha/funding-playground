@@ -16,24 +16,9 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      
-      <div class="govuk-character-count" data-module="govuk-character-count" data-maxwords="25">
-        <div class="govuk-form-group">
-            <label class="govuk-label govuk-label--m" for="word-count">
-                Project Summary
-            </label>
-          <div id="with-hint-hint" class="govuk-hint">
-            Summarise your project in 25 words or fewer
-          </div>
-          <textarea class="govuk-textarea govuk-js-character-count" id="word-count" name="word-count" rows="5" aria-describedby="word-count-info"></textarea>
-        </div>
-      
-        <div id="word-count-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
-          You can enter up to 25 words
-        </div>
-      
-      </div>
-          
+
+{% include "includes/questions/project-summary.html" %}          
+
     </div>
   </div>
 {% endblock %}

@@ -16,20 +16,9 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      
-      <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--m" for="project-sector">
-          Project sector
-        </label>
-        <select class="govuk-select" id="sort" name="project-sector">
-          <option value="published">published</option>
-          <option value="updated" selected>updated</option>
-          <option value="views">views</option>
-        </select>
-      </div>
+
+{% include "includes/questions/project-sector.html" %}
 
     </div>
-          
-        
   </div>
 {% endblock %}

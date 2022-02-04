@@ -16,14 +16,9 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      
-      <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--m" for="responsible-name">
-          Responsible person
-        </label>
-        <input class="govuk-input" id="responsible-name" name="responsible-name" type="text" spellcheck="false">
+
+{% include "includes/questions/responsible-name.html" %}          
+
     </div>
-          
-  </div>
   </div>
 {% endblock %}

@@ -16,46 +16,9 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-            Would funding your organisation be classed as State Aid?
-          </legend>
-          <div class="govuk-radios" data-module="govuk-radios">
-      
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="state-aid" name="state-aid" type="radio" value="yes" data-aria-controls="conditional-state-aid">
-              <label class="govuk-label govuk-radios__label" for="state-aid">
-                Yes
-              </label>
-            </div>
-      
-            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-state-aid">
-      
-              <div class="govuk-form-group">
-                <label class="govuk-label" for="more-detail">
-                  Explain how your project is compliant with the UK subsidy control regime
-                </label>
-                <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5"></textarea>
-              </div>
-              
-            </div>
-      
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="state-aid-2" name="state-aid" type="radio" value="no">
-              <label class="govuk-label govuk-radios__label" for="state-aid-2">
-                No
-              </label>
-            </div>
-      
-          </div>
-      
-        </fieldset>
-      </div>
+
+      {% include "includes/questions/state-aid.html" %}
 
     </div>
-          
-        
   </div>
 {% endblock %}

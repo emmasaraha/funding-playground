@@ -17,14 +17,9 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      
-        <div class="govuk-form-group">
-            <label class="govuk-label govuk-label--m" for="website">
-                Website
-            </label>
-            <input class="govuk-input govuk-!-width-one-half" id="website" name="website" type="text">
-        </div>
-    </div>        
+
+{% include "includes/questions/applicant-website.html" %}
+
+    </div>
   </div>
 {% endblock %}
-

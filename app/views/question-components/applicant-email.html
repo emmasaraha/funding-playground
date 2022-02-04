@@ -17,12 +17,6 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--m" for="email">
-          Email address
-        </label>
-        <input class="govuk-input" id="email" name="email" type="email" spellcheck="false" autocomplete="email">
-      </div>
-    </div>
+{% include "includes/questions/applicant-email.html" %}    </div>
   </div>
 {% endblock %}
