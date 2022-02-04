@@ -27,13 +27,31 @@ router.post('/mp-endorsement-answer', function (req, res) {
   // Check whether the variable matches a condition
   if (endorsementAnswer == "true"){
     // Send user to next page
-    res.redirect('/ALT-Section-questions/about-organisation-06')
+    res.redirect('/ALT-Section-questions/about-organisation-07')
   } if (endorsementAnswer == "false") {
     // Send user to about-project
     res.redirect('/ALT-Section-questions/about-project-01')
   }
 
 })
+
+router.post('/project-location-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var locationAnswer = req.session.data['project-delivery-location']['project-delivery-location-3']
+
+  // Check whether the variable matches a condition
+  if ( locationAnswer == "Northern Ireland"){
+    // Send user to next page
+    res.redirect('/ALT-Section-questions/project-suitable')
+  } else {
+    // Send user to about-project
+    res.redirect('/ALT-Section-questions/project-unsuitable')
+  }
+
+})
+
+
 
 
 module.exports = router

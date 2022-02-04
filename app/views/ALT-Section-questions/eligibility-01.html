@@ -11,19 +11,19 @@
 {% block content %}
 
   <div class="govuk-grid-row">
+
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">About the project</h1>
+      <form class="form" action="eligibility-02" method="post">
 
-      <form class="form" action="declarations" method="post">
-
-        {% include "question-includes/policy-aims.html" %}
+        {% include "question-includes/project-funding.html" %}
 
         <button class="govuk-button" data-module="govuk-button">Save and continue</button>
 
       </form>
 
     </div>
+
   </div>
 
 {% endblock %}

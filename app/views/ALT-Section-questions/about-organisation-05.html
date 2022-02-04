@@ -13,11 +13,13 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">About your organisation</h1>
+      <h1 class="govuk-heading-xl">Organisation information</h1>
 
-      <form action="/mp-endorsement-answer" method="post" class="form">
+      <form action="about-organisation-06" method="post" class="form">
 
-        {% include "question-includes/endorsement.html" %}
+        {% include "question-includes/accountant-name.html" %}
+
+        {% include "question-includes/responsible-name.html" %}
 
         <button class="govuk-button" data-module="govuk-button">Save and continue</button>
 
