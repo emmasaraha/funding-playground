@@ -1,6 +1,7 @@
 // Core dependencies
 const fs = require('fs')
 const path = require('path')
+const url = require('url')
 
 // NPM dependencies
 const bodyParser = require('body-parser')
@@ -300,7 +301,11 @@ if (useV6) {
 
 // Redirect all POSTs to GETs - this allows users to use POST for autoStoreData
 app.post(/^\/([^.]+)$/, function (req, res) {
-  res.redirect('/' + req.params[0])
+  res.redirect(url.format({
+    pathname: '/' + req.params[0],
+    query: req.query
+  })
+  )
 })
 
 // Catch 404 and forward to error handler
@@ -321,38 +326,3 @@ console.log('\nGOV.UK Prototype Kit v' + releaseVersion)
 console.log('\nNOTICE: the kit is for building prototypes, do not use it for production services.')
 
 module.exports = app
-
-// Local authority search
-const Fuse = require('fuse.js');
-const laData = require('./la.json');
-
-const fuse = new Fuse(laData, {
-    keys: ['official-name', 'alt-name-1'],
-    threshold: 0.2,
-    includeScore: true
-});
-
-app.get('/laSearch', function(req, res) {
-    if (req.query.la) {
-        let finalResults = [];
-        let words = req.query.la.split(' ');
-        for (let i = 0; i < words.length; i++) {
-            const word = words[i];
-            const result = fuse.search(word);
-            if (result) {
-                finalResults = [...finalResults, ...result];
-            }
-        }
-        if (finalResults) {
-            if (req.query.stringify) {
-                res.status(200).send({ result: JSON.stringify(finalResults) });
-            } else {
-                res.status(200).send(finalResults);
-            }
-        } else {
-            res.sendStatus(404);
-        }
-    } else {
-        res.sendStatus(400);
-    }
-});
