@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Emma's fsd playground
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Ask applicants for...
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a class="govuk-link" href="question-components/applicant-name.html">Full name</a>
+              <span class="research-tag research-tag-low">Low</span>
+            </li>
+            <li>
+              <a class="govuk-link" href="question-components/applicant-email.html">Email address</a>
+              <span class="research-tag research-tag-low">Low</span>
+            </li>
+            <li>
+              <a class="govuk-link" href="question-components/applicant-phone.html">Telephone number</a>
+              <span class="research-tag research-tag-low">Low</span>
+            </li>
+            <li>
+              <a class="govuk-link" href="question-components/applicant-website.html">Website</a>
+              <span class="research-tag research-tag-medium">Medium</span>
+            </li>
+            <li>
+              <a href="#" class="govuk-!-font-weight-bold">
+                More <span class="govuk-visually-hidden">in Subsection</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Assess criteria for...
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a class="govuk-link" href="question-components/applicant-name.html">Previous project experience</a>
+              <span class="research-tag research-tag-high">High</span>
+            </li>
+            <li>
+              <a class="govuk-link" href="question-components/applicant-email.html">How much money is needed</a>
+              <span class="research-tag research-tag-high">High</span>
+            </li>
+            <li>
+              <a class="govuk-link" href="question-components/applicant-phone.html">What the project is aiming to achieve</a>
+              <span class="research-tag research-tag-high">High</span>
+            </li>
+            <li>
+              <a href="#" class="govuk-!-font-weight-bold">
+                More <span class="govuk-visually-hidden">in Subsection</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      </div>
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-xl">
+          Ask applicants for
+        </span>
+        Email addresses
+      </h1>
+
+      <p><span class="research-tag research-tag-low">Approved</span></p>
+
+      <p>This question has been well researched and is approved for use in funding applications.</p>
+
+<div style="border:1px solid;padding:20px;"
+{% include "includes/questions/applicant-email.html" %}
+</div>
+      </div>
+
+  </div>
+{% endblock %}
