@@ -18,7 +18,7 @@ router.get('funds', function (req, res) {
     res.render('funds', { name: 'Foo' })
 })
 
-// Run this code when a form is submitted to 'juggling-balls-answer'
+// Run this code when form is submitted to endorsement-01
 router.post('/mp-endorsement-answer', function (req, res) {
 
   // Make a variable and give it the value from 'how-many-balls'
@@ -27,7 +27,7 @@ router.post('/mp-endorsement-answer', function (req, res) {
   // Check whether the variable matches a condition
   if (endorsementAnswer == "true"){
     // Send user to next page
-    res.redirect('/ALT-Section-questions/about-organisation-07')
+    res.redirect('/ALT-Section-questions/endorsement-02')
   } if (endorsementAnswer == "false") {
     // Send user to about-project
     res.redirect('/ALT-Section-questions/about-project-01')
@@ -35,21 +35,23 @@ router.post('/mp-endorsement-answer', function (req, res) {
 
 })
 
-router.post('/project-location-answer', function (req, res) {
+// Run this code when a form is submitted to 'juggling-balls-answer'
+router.post('/match-funding-answer', function (req, res) {
 
   // Make a variable and give it the value from 'how-many-balls'
-  var locationAnswer = req.session.data['project-delivery-location']['project-delivery-location-3']
+  var matchFundingAnswer = req.session.data['match-funding']
 
   // Check whether the variable matches a condition
-  if ( locationAnswer == "Northern Ireland"){
+  if (matchFundingAnswer == "No"){
     // Send user to next page
-    res.redirect('/ALT-Section-questions/project-suitable')
+    res.redirect('/ALT-Section-questions/project-unsuitable')
   } else {
     // Send user to about-project
-    res.redirect('/ALT-Section-questions/project-unsuitable')
+    res.redirect('/ALT-Section-questions/project-suitable')
   }
 
 })
+
 
 
 
