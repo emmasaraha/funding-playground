@@ -1,0 +1,396 @@
+{% extends "layout_unbranded.html" %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+tag: {
+text: "prototype"
+},
+html: 'This is not a live service. This is a service currently being designed. '
+}) }}
+
+<a href="#" class="govuk-back-link">Back to <span class="govuk-!-font-weight-bold">all assessments</span></a>
+
+{% endblock%}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div class="govuk-grid-column-two-thirds question">
+
+      <span class="govuk-caption-m">Community Ownership Fund: Round 2</span>
+      <h1 class="govuk-heading-l">COF/2/0047</h1>
+
+      {% if data['value-money-complete'] == "yes" and data['project-aims-outcomes-complete'] == "yes" %}
+
+      <div class="assessment-alert">
+        <h2 class="assessment-alert__heading">Application assessed</h2>
+        <p>
+          All sections from this application have been marked as complete. <a href="#">Return to all assessments</a>
+        </p>
+      </div>
+
+      {% endif %}
+
+      <h2 class="govuk-!-padding-top-6 govuk-!-padding-bottom-0 govuk-heading-l">Reporting and analysis</h2>
+      <ol class="app-task-list">
+        <li>
+          <h2 class="govuk-!-padding-top-6 app-task-list__section">Identification
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/baseline-assessment/contact" aria-describedby="eligibility-status">
+                  Contact information
+                </a>
+              </span>
+              {% if data['contact-information-complete'] == "yes" %}
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+              {% elseif data['contact-information'] %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="read-declaration-status">Assessing</strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="read-declaration-status">Not
+                started</strong>
+              {% endif %}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/baseline-assessment/organisation-info" aria-describedby="read-declaration-status">
+                  Organisation information
+                </a>
+              </span>
+              {% if data['organisation-information-complete'] == "yes" %}
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+              {% elseif data['organisation-information'] %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="read-declaration-status">Assessing</strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="read-declaration-status">Not
+                started</strong>
+              {% endif %}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/baseline-assessment/project-info" aria-describedby="read-declaration-status">
+                  Project information
+                </a>
+              </span>
+              {% if data['project-information-complete'] == "yes" %}
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+              {% elseif data['project-information'] %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="read-declaration-status">Assessing</strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="read-declaration-status">Not
+                started</strong>
+              {% endif %}
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <h2 class="app-task-list__section">Due diligence
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/baseline-assessment/track-record" aria-describedby="eligibility-status">
+                  Track record
+                </a>
+              </span>
+              {% if data['track-record-complete'] == "yes" %}
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+              {% elseif data['track-record'] %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="read-declaration-status">Assessing</strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="read-declaration-status">Not
+                started</strong>
+              {% endif %}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/baseline-assessment/endorsements" aria-describedby="read-declaration-status">
+                  Endorsements
+                </a>
+              </span>
+            </span>
+            {% if data['endorsements-complete'] == "yes" %}
+            <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+            {% elseif data['endorsements'] %}
+            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="read-declaration-status">Assessing</strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="read-declaration-status">Not
+              started</strong>
+            {% endif %}
+            </li>
+          </ul>
+        </li>
+
+        <h2 class="govuk-!-margin-top-2 govuk-!-margin-bottom-9 govuk-heading-l">General assessment</h2>
+
+        <li>
+          <h2 class="app-task-list__section">Objectives</h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/baseline-assessment/project-details" aria-describedby="eligibility-status">
+                  Project details
+                </a>
+              </span>
+              {% if data['project-details-complete'] == "yes" %}
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+              {% elseif data['project-details'] %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="read-declaration-status">Assessing</strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="read-declaration-status">Not
+                started</strong>
+              {% endif %}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <!--<a href="#" aria-describedby="read-declaration-status">-->
+                  Funding requested
+                <!--</a>-->
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="read-declaration-status">Not started</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/baseline-assessment/project-aims" aria-describedby="read-declaration-status">
+                  Project aims and outcomes
+                </a>
+              </span>
+              {% if data['project-aims-outcomes-complete'] == "yes" %}
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+              {% elseif data['trade'] or data['skills']%}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="read-declaration-status">Assessing</strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="read-declaration-status">Not
+                started</strong>
+              {% endif %}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/baseline-assessment/project-timescales" aria-describedby="read-declaration-status">
+                  Project timescales
+                </a>
+              </span>
+              {% if data['project-timescales-complete'] == "yes" %}
+            <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+            {% elseif data['project-timescales'] %}
+            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="read-declaration-status">Assessing</strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="read-declaration-status">Not
+              started</strong>
+            {% endif %}
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <h2 class="app-task-list__section" id="testing">Project strategy
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/baseline-assessment/skills-expertise" aria-describedby="eligibility-status">
+                  Skills and expertise
+                </a>
+              </span>
+              {% if data['skills-expertise-complete'] == "yes" %}
+            <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+            {% elseif data['skills-expertise'] %}
+            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="read-declaration-status">Assessing</strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="read-declaration-status">Not
+              started</strong>
+            {% endif %}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/baseline-assessment/delivery-partner" aria-describedby="read-declaration-status">
+                  Delivery partners
+                </a>
+              </span>
+              {% if data['delivery-partner-complete'] == "yes" %}
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+              {% elseif data['delivery-partner'] %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="read-declaration-status">Assessing</strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="read-declaration-status">Not
+                started</strong>
+              {% endif %}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/baseline-assessment/internal-resource-1" aria-describedby="read-declaration-status">
+                  Internal resource - yes
+                </a>
+              </span>
+              {% if data['internal-resource-complete'] == "yes" %}
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+              {% elseif data['internal-resource'] %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="read-declaration-status">Assessing</strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="read-declaration-status">Not
+                started</strong>
+              {% endif %}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/baseline-assessment/internal-resource-2" aria-describedby="read-declaration-status">
+                  Internal resource - no
+                </a>
+              </span>
+              {% if data['no-internal-resource-complete'] == "yes" %}
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+              {% elseif data['no-internal-resource'] %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="read-declaration-status">Assessing</strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="read-declaration-status">Not
+                started</strong>
+              {% endif %}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/baseline-assessment/roles-responsibilities" aria-describedby="read-declaration-status">
+                  Roles and responsibilities
+                </a>
+              </span>
+              {% if data['roles-responsibilities-complete'] == "yes" %}
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+              {% elseif data['roles-responsibilities'] %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="read-declaration-status">Assessing</strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="read-declaration-status">Not
+                started</strong>
+              {% endif %}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/baseline-assessment/governance" aria-describedby="read-declaration-status">
+                  Governance
+                </a>
+              </span>
+              {% if data['governance-complete'] == "yes" %}
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+              {% elseif data['governance'] %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="read-declaration-status">Assessing</strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="read-declaration-status">Not
+                started</strong>
+              {% endif %}
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <h2 class="app-task-list__section">Project delivery
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/baseline-assessment/project-benefits" aria-describedby="eligibility-status">
+                  Project benefits
+                </a>
+              </span>
+              {% if data['project-benefits-complete'] == "yes" %}
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+              {% elseif data['project-benefits'] %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="read-declaration-status">Assessing</strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="read-declaration-status">Not
+                started</strong>
+              {% endif %}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <!--<a href="/baseline-assessment/project-budget" aria-describedby="eligibility-status">-->
+                  Project budget
+                <!--</a>-->
+              </span>
+              {% if data['project-budget-complete'] == "yes" %}
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+              {% elseif data['project-budget'] %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="read-declaration-status">Assessing</strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="read-declaration-status">Not
+                started</strong>
+              {% endif %}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/baseline-assessment/project-management" aria-describedby="eligibility-status">
+                  Project management
+                </a>
+              </span>
+              {% if data['project-management-complete'] == "yes" %}
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+              {% elseif data['delivery-time'] or data['delivery-budget']%}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="read-declaration-status">Assessing</strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="read-declaration-status">Not
+                started</strong>
+              {% endif %}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/baseline-assessment/risk-1" aria-describedby="eligibility-status">
+                  Risk
+                </a>
+              </span>
+              {% if data['risk-innovation-complete'] and data['risk-register-complete'] and data['risk-management-complete'] == "yes" %}
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+              {% elseif data['risk-innovation'] or data['risk-register'] or data['risk-identification'] or data['risk-management'] %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="read-declaration-status">Assessing</strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="read-declaration-status">Not
+                started</strong>
+              {% endif %}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/baseline-assessment/monitoring-evaluation" aria-describedby="eligibility-status">
+                  Monitoring and evaluation
+                </a>
+              </span>
+              {% if data['monitoring-evaluation-complete'] == "yes" %}
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+              {% elseif data['monitoring-evaluation'] %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="read-declaration-status">Assessing</strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="read-declaration-status">Not
+                started</strong>
+              {% endif %}
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <h2 class="app-task-list__section">Declarations
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <!--<a href="#" aria-describedby="eligibility-status">-->
+                  Declarations
+                <!--</a>-->
+              </span>
+              {% if data['declarations-complete'] == "yes" %}
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+              {% elseif data['declarations'] %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="read-declaration-status">Assessing</strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="read-declaration-status">Not
+                started</strong>
+              {% endif %}
+            </li>
+          </ul>
+        </li>
+    </div>
+
+
+  </div>
+
+  {% endblock %}

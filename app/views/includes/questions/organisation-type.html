@@ -1,32 +1,50 @@
-<div class="govuk-form-group">
+<div class="govuk-form-group govuk-!-margin-top-8">
   <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h2 class="govuk-fieldset__heading">
         Type of organisation
+      </h2>
     </legend>
     
     <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
       
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="organisation-type-1" name="organisation-type" type="radio" value="local-authority" data-aria-controls="conditional-organisation-type">
+        <input class="govuk-radios__input" id="organisation-type-1" name="organisation-type" type="radio" value="local-authority" data-aria-controls="conditional-organisation-type-01">
         <label class="govuk-label govuk-radios__label" for="organisation-type-1">
           Local authority
         </label>
       </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-organisation-type-01">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="local-authority-name">
+            Enter the name of your local authority
+          </label>
+          <input class="govuk-input govuk-!-width-one-third" id="local-authority-name" name="local-authority-name" type="text" spellcheck="false">
+        </div>
+      </div>
 
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="organisation-type-2" name="organisation-type" type="radio" value="mayoral-authority" data-aria-controls="conditional-organisation-type">
+        <input class="govuk-radios__input" id="organisation-type-2" name="organisation-type" type="radio" value="mayoral-authority" data-aria-controls="conditional-organisation-type-02">
         <label class="govuk-label govuk-radios__label" for="organisation-type-2">
           Mayoral authority
         </label>
       </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-organisation-type-02">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="mayoral-authority-name">
+            Enter the name of your mayoral authority
+          </label>
+          <input class="govuk-input govuk-!-width-one-third" id="mayoral-authority-name" name="mayoral-authority-name" type="text" spellcheck="false">
+        </div>
+      </div>
 
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="organisation-type-3" name="organisation-type" type="radio" value="limited-company" data-aria-controls="conditional-registration-number">
+        <input class="govuk-radios__input" id="organisation-type-3" name="organisation-type" type="radio" value="limited-company" data-aria-controls="conditional-organisation-type-03">
         <label class="govuk-label govuk-radios__label" for="organisation-type-3">
           Limited company
         </label>
       </div>
-      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-registration-number">
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-organisation-type-03">
         <div class="govuk-form-group">
           <label class="govuk-label" for="registration-number">
             Enter your registration number
@@ -36,24 +54,48 @@
       </div>
 
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="organisation-type-4" name="organisation-type" type="radio" value="registered-charity" data-aria-controls="conditional-organisation-type">
+        <input class="govuk-radios__input" id="organisation-type-4" name="organisation-type" type="radio" value="registered-charity" data-aria-controls="conditional-organisation-type-04">
         <label class="govuk-label govuk-radios__label" for="organisation-type-4">
           Registered charity
         </label>
       </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-organisation-type-04">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="charity-registration-number">
+            Enter your registration number
+          </label>
+          <input class="govuk-input govuk-!-width-one-third" id="charity-registration-number" name="registration-number" type="number" spellcheck="false">
+        </div>
+      </div>
 
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="organisation-type-5" name="organisation-type" type="radio" value="social-enterprise" data-aria-controls="conditional-organisation-type-5">
+        <input class="govuk-radios__input" id="organisation-type-5" name="organisation-type" type="radio" value="social-enterprise" data-aria-controls="conditional-organisation-type-05">
         <label class="govuk-label govuk-radios__label" for="organisation-type-5">
           Social enterprise
         </label>
       </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-organisation-type-05">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="registration-number">
+            Enter your registration number
+          </label>
+          <input class="govuk-input govuk-!-width-one-third" id="registration-number" name="registration-number" type="number" spellcheck="false">
+        </div>
+      </div>
 
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="organisation-type-6" name="organisation-type" type="radio" value="other" data-aria-controls="conditional-organisation-type-6">
+        <input class="govuk-radios__input" id="organisation-type-6" name="organisation-type" type="radio" value="other" data-aria-controls="conditional-organisation-type-06">
         <label class="govuk-label govuk-radios__label" for="organisation-type-6">
           Other
         </label>
+      </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-organisation-type-06">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="registration-number">
+            Please specify your organisation type
+          </label>
+          <input class="govuk-input govuk-!-width-one-third" id="registration-number" name="registration-number" type="number" spellcheck="false">
+        </div>
       </div>
 
     </div>

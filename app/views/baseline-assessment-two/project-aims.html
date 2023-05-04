@@ -1,0 +1,536 @@
+{% extends "layout_unbranded.html" %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+tag: {
+text: "prototype"
+},
+html: 'This is not a live service. This is a service currently being designed. '
+}) }}
+
+<a href="index.html" class="govuk-back-link">Back to <span class="govuk-!-font-weight-bold">overall assessment view</span></a>
+{% endblock%}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div class="govuk-grid-column-two-thirds question">
+
+      <h1 class="govuk-heading-l">Project aims and outcomes</h1>
+
+      <details class="govuk-!-margin-top-6 govuk-details" data-module="govuk-details">
+        
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Help me with guidance on scoring this section
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <h3 class="govuk-!-margin-top-2 govuk-heading-s">Applications will be assessed on the following
+            4 criteria:</h3>
+
+          <p class="govuk-!-margin-top-0 govuk-body"><strong>1. Strategic case:</strong> applicants should
+            show that
+            without intervention the asset would be lost to the community, the impacts that this would
+            have and support they have from the community and other partners.
+          </p>
+
+          <p class="govuk-!-margin-top-0 govuk-body"><strong>2. Management case:</strong> applicants
+            should show the
+            objectives and deliverability of the project and how the asset or amenity will be run
+            sustainably.
+          </p>
+
+          <p class="govuk-!-margin-top-0 govuk-body"><strong>3. Potential to deliver community
+              benefit:</strong> using the
+            outcomes framework, applicants should show how the asset will deliver community benefits
+            under community ownership.
+          </p>
+
+          <p class="govuk-!-margin-top-0 govuk-body"><strong>4. Added value of the community asset based
+              on
+              community need:</strong> using local data and information on community need, applicants
+            should be
+            able to show the added value of the asset or amenity to the community.
+          </p>
+
+          <a href="#" class="govuk-link govuk-link--no-visited-state">Read the full guidance</a>
+
+        </div>
+      </details>
+
+      <div>
+        <p class="govuk-body">This project will meet the following policy aims:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Level up skills</li>
+          <li>Increase trade and prosperity</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="govuk-heading-m">Level up skills</h2>
+
+        <p class='applicant_content govuk-body'>The company will create an educational space in the new development to continue an initiative engaging children in the local community. Our Wonkapreneur's scheme is a voluntary program inviting young people from the constituency to visit the factory to learn about the manufacturing process,          and be educated in business skills.</p>
+        <div id="skills">
+          <h3 class="govuk-heading-m govuk-!-margin-top-7">Score this section</h3>
+          <p>Give this answer a score out of 5. This will automatically contribute to the overall score for the
+            assessment.</p>
+          <form action="#skills" method="" class="form">
+
+            {% if data['skills'] %}
+
+            <div id="score-view">
+              <p>You scored this section a: <span style="float:right"><a id="score-toggle" href="">edit</a></span>
+              </p>
+              <p class="govuk-!-font-weight-bold govuk-!-font-size-36">{{ data['skills'] }}/5</p>
+              <div class="govuk-form-group govuk-!-margin-top-7">
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                    What was the reasoning for this score?
+                  </legend>
+                  <div class="govuk-radios" data-module="govuk-radios">
+                    {% if data['skills'] == "1" %}
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="trade-reason" name="trade-reason" type="radio"
+                        value="reason-1">
+                      <label class="govuk-label govuk-radios__label" for="trade-reason">
+                        Limited evidence or suitable data sources provided
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="skills-reason-2" name="skills-reason" type="radio"
+                        value="reason-2">
+                      <label class="govuk-label govuk-radios__label" for="skills-reason-2">
+                        Has no appropriate outputs or outcomes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="skills-reason-3" name="skills-reason" type="radio"
+                        value="reason-3">
+                      <label class="govuk-label govuk-radios__label" for="skills-reason-3">
+                        Lacks realism behind proposed ideas
+                      </label>
+                    </div>
+                    {% elseif data['skills'] == "2" %}
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="skills-reason" name="skills-reason" type="radio"
+                        value="reason-1">
+                      <label class="govuk-label govuk-radios__label" for="skills-reason">
+                        Provides little evidence and relevant data sources to support some of their proposed ideas
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="skills-reason-2" name="skills-reason" type="radio"
+                        value="reason-2">
+                      <label class="govuk-label govuk-radios__label" for="skills-reason-2">
+                        Makes few references to appropriate outputs or outcomes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="skills-reason-2" name="skills-reason" type="radio"
+                        value="reason-2">
+                      <label class="govuk-label govuk-radios__label" for="skills-reason-2">
+                        Has some realistic ideas, others are unrealistic
+                      </label>
+                    </div>
+                    {% elseif data['skills'] == "3" %}
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="skills-reason" name="skills-reason" type="radio"
+                        value="reason-1">
+                      <label class="govuk-label govuk-radios__label" for="skills-reason">
+                        Provides some evidence and relevant data sources to support proposed ideas
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="skills-reason-2" name="skills-reason" type="radio"
+                        value="reason-2">
+                      <label class="govuk-label govuk-radios__label" for="skills-reason-2">
+                        Makes some reference to appropriate outputs or outcomes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="skills-reason-3" name="skills-reason" type="radio"
+                        value="reason-3">
+                      <label class="govuk-label govuk-radios__label" for="skills-reason-3">
+                        Provides some sound estimations and numeric targets to support their thinking
+                      </label>
+                    </div>
+                    {% elseif data['skills'] == "4" %}
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="skills-reason" name="skills-reason" type="radio"
+                        value="reason-1">
+                      <label class="govuk-label govuk-radios__label" for="skills-reason">
+                        There is some evidence linked to the proposed outputs and outcomes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="skills-reason-2" name="skills-reason" type="radio"
+                        value="reason-2">
+                      <label class="govuk-label govuk-radios__label" for="skills-reason-2">
+                        Some well-presented thinking and good logic behind the proposed ideas
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="skills-reason-2" name="skills-reason" type="radio"
+                        value="reason-3">
+                      <label class="govuk-label govuk-radios__label" for="skills-reason-2">
+                        Provides a good range of sound estimations and numeric targets to support their thinking
+                      </label>
+                    </div>
+                    {% elseif data['skills'] == "5" %}
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="skills-reason" name="skills-reason" type="radio"
+                        value="reason-1">
+                      <label class="govuk-label govuk-radios__label" for="skills-reason">
+                        Evidence is robust and clearly linked to proposed outputs and outcomes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="skills-reason-2" name="skills-reason" type="radio"
+                        value="reason-2">
+                      <label class="govuk-label govuk-radios__label" for="skills-reason-2">
+                        Well-presented thinking and sound logic behind the proposed ideas
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="skills-reason-2" name="skills-reason" type="radio"
+                        value="reason-2">
+                      <label class="govuk-label govuk-radios__label" for="skills-reason-2">
+                        Provides an excellent range of sound estimations and numeric targets to fully support their thinking
+                      </label>
+                    </div>
+                    {% endif %}   
+                  </div>
+
+                </fieldset>
+                <button class="govuk-button govuk-button--secondary govuk-!-margin-top-7"
+                  data-module="govuk-button">
+                  Add an additional comment
+                </button>
+              </div>
+            </div>
+
+            {% else %}
+
+            <div id="score-edit" class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="skills-5" name="skills" type="radio" value="5">
+                <label class="govuk-label govuk-radios__label" for="skills-5">
+                  <span class="govuk-!-font-weight-bold">5</span> Excellent
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="skills-4" name="skills" type="radio" value="4">
+                <label class="govuk-label govuk-radios__label" for="skills-4">
+                  <span class="govuk-!-font-weight-bold">4</span> Good
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="skills-3" name="skills" type="radio" value="3">
+                <label class="govuk-label govuk-radios__label" for="skills-3">
+                  <span class="govuk-!-font-weight-bold">3</span> Satisfactory
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="skills-2" name="skills" type="radio" value="2">
+                <label class="govuk-label govuk-radios__label" for="skills-2">
+                  <span class="govuk-!-font-weight-bold">2</span> Moderate
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="skills-1" name="skills" type="radio" value="1">
+                <label class="govuk-label govuk-radios__label" for="skills-1">
+                  <span class="govuk-!-font-weight-bold">1</span> Limited
+                </label>
+              </div>
+            </div>
+
+            <div class="govuk-button-group govuk-!-margin-top-7">
+              <button class="govuk-button" data-module="govuk-button">
+                Save score
+              </button>
+
+
+            </div>
+            {% endif %}
+
+          </form>
+        </div>
+
+      </div>
+
+      <div>
+        <h2 class="govuk-heading-m">Trade and prosperity</h2>
+
+        <p>Our project will deliver new jobs in manufacturing, and our workforce uniform will stimulate production of white dungarees in the local area. Increased production of our fizzy lifting drinks will provide an invaluable public service by simplifying the cleaning of high-rise windows.We forecast that by 2030:        </p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>5,000 new staff will be employed from the local area</li>
+          <li>Visitor numbers to the factory tour will increase by 200%</li>
+          <li>Net zero targets will be reached for this and three neighbouring companies</li>
+        </ul>
+        <div id="trade">
+          <h3 class="govuk-heading-m govuk-!-margin-top-7">Score this section</h3>
+          <p>Give this answer a score out of 5. This will automatically contribute to the overall score for the
+            assessment.</p>
+          <form action="#trade" method="" class="form">
+
+            {% if data['trade'] %}
+
+            <div id="score-view">
+              <p>You scored this section a: <span style="float:right"><a id="score-toggle" href="">edit</a></span>
+              </p>
+              <p class="govuk-!-font-weight-bold govuk-!-font-size-36">{{ data['trade'] }}/5</p>
+              <div class="govuk-form-group govuk-!-margin-top-7">
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                    What was the reasoning for this score?
+                  </legend>
+                  <div class="govuk-radios" data-module="govuk-radios">
+                    {% if data['trade'] == "1" %}
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="trade-reason" name="trade-reason" type="radio"
+                        value="reason-1">
+                      <label class="govuk-label govuk-radios__label" for="trade-reason">
+                        Limited evidence or suitable data sources provided
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="trade-reason-2" name="trade-reason" type="radio"
+                        value="reason-2">
+                      <label class="govuk-label govuk-radios__label" for="trade-reason-2">
+                        Has no appropriate outputs or outcomes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="trade-reason-3" name="trade-reason" type="radio"
+                        value="reason-3">
+                      <label class="govuk-label govuk-radios__label" for="trade-reason-3">
+                        Lacks realism behind proposed ideas
+                      </label>
+                    </div>
+                    {% elseif data['trade'] == "2" %}
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="trade-reason" name="trade-reason" type="radio"
+                        value="reason-1">
+                      <label class="govuk-label govuk-radios__label" for="trade-reason">
+                        Provides little evidence and relevant data sources to support some of their proposed ideas
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="trade-reason-2" name="trade-reason" type="radio"
+                        value="reason-2">
+                      <label class="govuk-label govuk-radios__label" for="trade-reason-2">
+                        Makes few references to appropriate outputs or outcomes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="trade-reason-2" name="trade-reason" type="radio"
+                        value="reason-2">
+                      <label class="govuk-label govuk-radios__label" for="trade-reason-2">
+                        Has some realistic ideas, others are unrealistic
+                      </label>
+                    </div>
+                    {% elseif data['trade'] == "3" %}
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="trade-reason" name="trade-reason" type="radio"
+                        value="reason-1">
+                      <label class="govuk-label govuk-radios__label" for="trade-reason">
+                        Provides some evidence and relevant data sources to support proposed ideas
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="trade-reason-2" name="trade-reason" type="radio"
+                        value="reason-2">
+                      <label class="govuk-label govuk-radios__label" for="trade-reason-2">
+                        Makes some reference to appropriate outputs or outcomes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="trade-reason-3" name="trade-reason" type="radio"
+                        value="reason-3">
+                      <label class="govuk-label govuk-radios__label" for="trade-reason-3">
+                        Provides some sound estimations and numeric targets to support their thinking
+                      </label>
+                    </div>
+                    {% elseif data['trade'] == "4" %}
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="trade-reason" name="trade-reason" type="radio"
+                        value="reason-1">
+                      <label class="govuk-label govuk-radios__label" for="trade-reason">
+                        There is some evidence linked to the proposed outputs and outcomes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="trade-reason-2" name="trade-reason" type="radio"
+                        value="reason-2">
+                      <label class="govuk-label govuk-radios__label" for="trade-reason-2">
+                        Some well-presented thinking and good logic behind the proposed ideas
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="trade-reason-2" name="trade-reason" type="radio"
+                        value="reason-3">
+                      <label class="govuk-label govuk-radios__label" for="trade-reason-2">
+                        Provides a good range of sound estimations and numeric targets to support their thinking
+                      </label>
+                    </div>
+                    {% elseif data['trade'] == "5" %}
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="trade-reason" name="trade-reason" type="radio"
+                        value="reason-1">
+                      <label class="govuk-label govuk-radios__label" for="trade-reason">
+                        Evidence is robust and clearly linked to proposed outputs and outcomes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="trade-reason-2" name="trade-reason" type="radio"
+                        value="reason-2">
+                      <label class="govuk-label govuk-radios__label" for="trade-reason-2">
+                        Well-presented thinking and sound logic behind the proposed ideas
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="trade-reason-2" name="trade-reason" type="radio"
+                        value="reason-2">
+                      <label class="govuk-label govuk-radios__label" for="trade-reason-2">
+                        Provides an excellent range of sound estimations and numeric targets to fully support their thinking
+                      </label>
+                    </div>
+                    {% endif %}   
+                  </div>
+
+                </fieldset>
+                <button class="govuk-button govuk-button--secondary govuk-!-margin-top-7"
+                  data-module="govuk-button">
+                  Add an additional comment
+                </button>
+              </div>
+            </div>
+
+            {% else %}
+
+            <div id="score-edit" class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="trade-5" name="trade" type="radio" value="5">
+                <label class="govuk-label govuk-radios__label" for="trade-5">
+                  <span class="govuk-!-font-weight-bold">5</span> Excellent
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="trade-4" name="trade" type="radio" value="4">
+                <label class="govuk-label govuk-radios__label" for="trade-4">
+                  <span class="govuk-!-font-weight-bold">4</span> Good
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="trade-3" name="trade" type="radio" value="3">
+                <label class="govuk-label govuk-radios__label" for="trade-3">
+                  <span class="govuk-!-font-weight-bold">3</span> Satisfactory
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="trade-2" name="trade" type="radio" value="2">
+                <label class="govuk-label govuk-radios__label" for="trade-2">
+                  <span class="govuk-!-font-weight-bold">2</span> Moderate
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="trade-1" name="trade" type="radio" value="1">
+                <label class="govuk-label govuk-radios__label" for="trade-1">
+                  <span class="govuk-!-font-weight-bold">1</span> Limited
+                </label>
+              </div>
+            </div>
+
+            <div class="govuk-button-group govuk-!-margin-top-7">
+              <button class="govuk-button" data-module="govuk-button">
+                Save score
+              </button>
+
+
+            </div>
+            {% endif %}
+
+          </form>
+      </div>
+
+      <div class="govuk-form-group">
+        <h3 class="govuk-!-margin-top-4 govuk-label-wrapper"><label class="govuk-label govuk-label--m"
+            for="account-number">
+            Total score for project aims and outcomes
+          </label>
+        </h3>
+        {% if data['trade'] and data['skills'] %}
+        {% set scoreTrade = data['trade'] | int %}
+        {% set scoreSkills = data['skills'] | int %}
+        <p>Your total for this question: <span style="float:right"><a id="score-toggle" href="">edit</a></span></p>
+        <p class="govuk-!-font-weight-bold govuk-!-font-size-36">{{ scoreSkills + scoreTrade }}/10</p>
+        {% else %}
+        <p class="govuk-!-margin-top-4">You have not scored all sections yet.</p>
+        {% endif %}
+      </div>
+
+      <form action="/baseline-assessment/project-timescales" method="POST" class="form">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h3 class="govuk-!-margin-top-4 govuk-heading-m">
+                Do you want to submit your final score for this section? </h3>
+            </legend>
+            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="project-aims-outcomes-complete"
+                  name="project-aims-outcomes-complete" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="project-aims-outcomes-complete">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="project-aims-outcomes-complete-2"
+                  name="project-aims-outcomes-complete" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="project-aims-outcomes-complete-2">
+                  No
+                </label>
+              </div>
+            </div>
+
+            <button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">
+              Confirm total score
+            </button>
+
+
+          </fieldset>
+        </div>
+      </form>
+
+    </div>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third scoring">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          
+          <h2 class="govuk-fieldset__heading">
+              Fund information
+          </h2>
+      </legend>
+
+      <h3 class="govuk-!-margin-top-6 govuk-!-margin-bottom-0 govuk-heading-s">Reference:</h3>
+      <p class="govuk-!-margin-top-0 govuk-body">COF/2/0047</p>
+
+      <h3 class="govuk-!-margin-top-4 govuk-!-margin-bottom-0 govuk-heading-s">Fund:</h3>
+      <p class="govuk-!-margin-top-0 govuk-body">Community ownership fund</p>
+
+      <h3 class="govuk-!-margin-bottom-0 govuk-heading-s">Round:</h3>
+      <p class="govuk-!-margin-top-0 govuk-body">2</p>
+    </div>
+
+  </div>
+
+  {% endblock %}
+

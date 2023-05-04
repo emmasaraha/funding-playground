@@ -1,0 +1,537 @@
+{% extends "layout_unbranded.html" %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+tag: {
+text: "prototype"
+},
+html: 'This is not a live service. This is a service currently being designed. '
+}) }}
+
+<a href="index.html" class="govuk-back-link">Back to <span class="govuk-!-font-weight-bold">overall assessment view</span></a>
+
+{% endblock%}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div class="govuk-grid-column-two-thirds question">
+
+      <h1 class="govuk-heading-l">Project management</h1>
+
+      <details class="govuk-!-margin-top-6 govuk-details" data-module="govuk-details">
+        
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Help me with guidance on scoring this section
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <h3 class="govuk-!-margin-top-2 govuk-heading-s">Applications will be assessed on the following
+            4 criteria:</h3>
+
+          <p class="govuk-!-margin-top-0 govuk-body"><strong>1. Strategic case:</strong> applicants should
+            show that
+            without intervention the asset would be lost to the community, the impacts that this would
+            have and support they have from the community and other partners.
+          </p>
+
+          <p class="govuk-!-margin-top-0 govuk-body"><strong>2. Management case:</strong> applicants
+            should show the
+            objectives and deliverability of the project and how the asset or amenity will be run
+            sustainably.
+          </p>
+
+          <p class="govuk-!-margin-top-0 govuk-body"><strong>3. Potential to deliver community
+              benefit:</strong> using the
+            outcomes framework, applicants should show how the asset will deliver community benefits
+            under community ownership.
+          </p>
+
+          <p class="govuk-!-margin-top-0 govuk-body"><strong>4. Added value of the community asset based
+              on
+              community need:</strong> using local data and information on community need, applicants
+            should be
+            able to show the added value of the asset or amenity to the community.
+          </p>
+
+          <a href="#" class="govuk-link govuk-link--no-visited-state">Read the full guidance</a>
+
+        </div>
+      </details>
+      
+      <div>
+          <p>Preamble about scoring instructions - here we assume assessors need to score these sections separately. However, we believe they should be able to read these two together (rather than splitting them).</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a class="govuk-link" href="#answer-section-1">Project delivery - on time</a>
+            </li>
+            <li>
+              <a class="govuk-link" href="#answer-section-2">Project delivery - on budget</a>
+            </li>
+          </ul>
+      </div>
+
+      <div id="answer-section-1">
+        <h2 class="govuk-heading-m">How are you going to make sure that the project is delivered on time?</h2>
+        <p>The delivery partner we have partnered with have an excellent track record of delivering projects on schedule, and our project plan accounts for an extra two months in case phase A slips. </p>
+
+        <div id="delivery-time">
+          <h3 class="govuk-heading-m govuk-!-margin-top-7">Score this section</h3>
+          <p>Give this answer a score out of 5. This will automatically contribute to the overall score for the
+            assessment.</p>
+          <form action="#delivery-time" method="" class="form">
+
+            {% if data['delivery-time'] %}
+
+            <div id="score-view">
+              <p>You scored this section a: <span style="float:right"><a id="score-toggle" href="">edit</a></span>
+              </p>
+              <p class="govuk-!-font-weight-bold govuk-!-font-size-36">{{ data['delivery-time'] }}/5</p>
+              <div class="govuk-form-group govuk-!-margin-top-7">
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                    What was the reasoning for this score?
+                  </legend>
+                  <div class="govuk-radios" data-module="govuk-radios">
+                    {% if data['delivery-time'] == "1" %}
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="delivery-time-reason" name="delivery-time-reason" type="radio"
+                        value="reason-1">
+                      <label class="govuk-label govuk-radios__label" for="delivery-time-reason">
+                        Limited evidence or suitable data sources provided
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="delivery-time-reason-2" name="delivery-time-reason" type="radio"
+                        value="reason-2">
+                      <label class="govuk-label govuk-radios__label" for="delivery-time-reason-2">
+                        Has no appropriate outputs or outcomes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="delivery-time-reason-3" name="delivery-time-reason" type="radio"
+                        value="reason-3">
+                      <label class="govuk-label govuk-radios__label" for="delivery-time-reason-3">
+                        Lacks realism behind proposed ideas
+                      </label>
+                    </div>
+                    {% elseif data['delivery-time'] == "2" %}
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="delivery-time-reason" name="delivery-time-reason" type="radio"
+                        value="reason-1">
+                      <label class="govuk-label govuk-radios__label" for="delivery-time-reason">
+                        Provides little evidence and relevant data sources to support some of their proposed ideas
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="delivery-time-reason-2" name="delivery-time-reason" type="radio"
+                        value="reason-2">
+                      <label class="govuk-label govuk-radios__label" for="delivery-time-reason-2">
+                        Makes few references to appropriate outputs or outcomes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="delivery-time-reason-2" name="delivery-time-reason" type="radio"
+                        value="reason-2">
+                      <label class="govuk-label govuk-radios__label" for="delivery-time-reason-2">
+                        Has some realistic ideas, others are unrealistic
+                      </label>
+                    </div>
+                    {% elseif data['delivery-time'] == "3" %}
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="delivery-time-reason" name="delivery-time-reason" type="radio"
+                        value="reason-1">
+                      <label class="govuk-label govuk-radios__label" for="delivery-time-reason">
+                        Provides some evidence and relevant data sources to support proposed ideas
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="delivery-time-reason-2" name="delivery-time-reason" type="radio"
+                        value="reason-2">
+                      <label class="govuk-label govuk-radios__label" for="delivery-time-reason-2">
+                        Makes some reference to appropriate outputs or outcomes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="delivery-time-reason-3" name="delivery-time-reason" type="radio"
+                        value="reason-3">
+                      <label class="govuk-label govuk-radios__label" for="delivery-time-reason-3">
+                        Provides some sound estimations and numeric targets to support their thinking
+                      </label>
+                    </div>
+                    {% elseif data['delivery-time'] == "4" %}
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="delivery-time-reason" name="delivery-time-reason" type="radio"
+                        value="reason-1">
+                      <label class="govuk-label govuk-radios__label" for="delivery-time-reason">
+                        There is some evidence linked to the proposed outputs and outcomes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="delivery-time-reason-2" name="delivery-time-reason" type="radio"
+                        value="reason-2">
+                      <label class="govuk-label govuk-radios__label" for="delivery-time-reason-2">
+                        Some well-presented thinking and good logic behind the proposed ideas
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="delivery-time-reason-2" name="delivery-time-reason" type="radio"
+                        value="reason-3">
+                      <label class="govuk-label govuk-radios__label" for="delivery-time-reason-2">
+                        Provides a good range of sound estimations and numeric targets to support their thinking
+                      </label>
+                    </div>
+                    {% elseif data['delivery-time'] == "5" %}
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="delivery-time-reason" name="delivery-time-reason" type="radio"
+                        value="reason-1">
+                      <label class="govuk-label govuk-radios__label" for="delivery-time-reason">
+                        Evidence is robust and clearly linked to proposed outputs and outcomes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="delivery-time-reason-2" name="delivery-time-reason" type="radio"
+                        value="reason-2">
+                      <label class="govuk-label govuk-radios__label" for="delivery-time-reason-2">
+                        Well-presented thinking and sound logic behind the proposed ideas
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="delivery-time-reason-2" name="delivery-time-reason" type="radio"
+                        value="reason-2">
+                      <label class="govuk-label govuk-radios__label" for="delivery-time-reason-2">
+                        Provides an excellent range of sound estimations and numeric targets to fully support their thinking
+                      </label>
+                    </div>
+                    {% endif %}   
+                  </div>
+
+                </fieldset>
+                <button class="govuk-button govuk-button--secondary govuk-!-margin-top-7"
+                  data-module="govuk-button">
+                  Add an additional comment
+                </button>
+              </div>
+            </div>
+
+            {% else %}
+
+            <div id="score-edit" class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="delivery-time-5" name="delivery-time" type="radio" value="5">
+                <label class="govuk-label govuk-radios__label" for="delivery-time-5">
+                  <span class="govuk-!-font-weight-bold">5</span> Excellent
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="delivery-time-4" name="delivery-time" type="radio" value="4">
+                <label class="govuk-label govuk-radios__label" for="delivery-time-4">
+                  <span class="govuk-!-font-weight-bold">4</span> Good
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="delivery-time-3" name="delivery-time" type="radio" value="3">
+                <label class="govuk-label govuk-radios__label" for="delivery-time-3">
+                  <span class="govuk-!-font-weight-bold">3</span> Satisfactory
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="delivery-time-2" name="delivery-time" type="radio" value="2">
+                <label class="govuk-label govuk-radios__label" for="delivery-time-2">
+                  <span class="govuk-!-font-weight-bold">2</span> Moderate
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="delivery-time-1" name="delivery-time" type="radio" value="1">
+                <label class="govuk-label govuk-radios__label" for="delivery-time-1">
+                  <span class="govuk-!-font-weight-bold">1</span> Limited
+                </label>
+              </div>
+            </div>
+
+            <div class="govuk-button-group govuk-!-margin-top-7">
+              <button class="govuk-button" data-module="govuk-button">
+                Save score
+              </button>
+
+
+            </div>
+            {% endif %}
+
+          </form>
+        </div>
+
+      </div>
+
+      <div id="answer-section-2">
+        <h2 class="govuk-heading-m">How are you going to make sure that the project is delivered on budget?</h2>
+        <p>We hired an accountant that will take care of that for us. </p>
+
+        <div id="delivery-budget">
+          <h3 class="govuk-heading-m govuk-!-margin-top-7">Score this section</h3>
+          <p>Give this answer a score out of 5. This will automatically contribute to the overall score for the
+            assessment.</p>
+          <form action="#delivery-budget" method="" class="form">
+
+            {% if data['delivery-budget'] %}
+
+            <div id="score-view">
+              <p>You scored this section a: <span style="float:right"><a id="score-toggle" href="">edit</a></span>
+              </p>
+              <p class="govuk-!-font-weight-bold govuk-!-font-size-36">{{ data['delivery-budget'] }}/5</p>
+              <div class="govuk-form-group govuk-!-margin-top-7">
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                    What was the reasoning for this score?
+                  </legend>
+                  <div class="govuk-radios" data-module="govuk-radios">
+                    {% if data['delivery-budget'] == "1" %}
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="delivery-budget-reason" name="delivery-budget-reason" type="radio"
+                        value="reason-1">
+                      <label class="govuk-label govuk-radios__label" for="delivery-budget-reason">
+                        Limited evidence or suitable data sources provided
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="delivery-budget-reason-2" name="delivery-budget-reason" type="radio"
+                        value="reason-2">
+                      <label class="govuk-label govuk-radios__label" for="delivery-budget-reason-2">
+                        Has no appropriate outputs or outcomes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="delivery-budget-reason-3" name="delivery-budget-reason" type="radio"
+                        value="reason-3">
+                      <label class="govuk-label govuk-radios__label" for="delivery-budget-reason-3">
+                        Lacks realism behind proposed ideas
+                      </label>
+                    </div>
+                    {% elseif data['delivery-budget'] == "2" %}
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="delivery-budget-reason" name="delivery-budget-reason" type="radio"
+                        value="reason-1">
+                      <label class="govuk-label govuk-radios__label" for="delivery-budget-reason">
+                        Provides little evidence and relevant data sources to support some of their proposed ideas
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="delivery-budget-reason-2" name="delivery-budget-reason" type="radio"
+                        value="reason-2">
+                      <label class="govuk-label govuk-radios__label" for="delivery-budget-reason-2">
+                        Makes few references to appropriate outputs or outcomes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="delivery-budget-reason-2" name="delivery-budget-reason" type="radio"
+                        value="reason-2">
+                      <label class="govuk-label govuk-radios__label" for="delivery-budget-reason-2">
+                        Has some realistic ideas, others are unrealistic
+                      </label>
+                    </div>
+                    {% elseif data['delivery-budget'] == "3" %}
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="delivery-budget-reason" name="delivery-budget-reason" type="radio"
+                        value="reason-1">
+                      <label class="govuk-label govuk-radios__label" for="delivery-budget-reason">
+                        Provides some evidence and relevant data sources to support proposed ideas
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="delivery-budget-reason-2" name="delivery-budget-reason" type="radio"
+                        value="reason-2">
+                      <label class="govuk-label govuk-radios__label" for="delivery-budget-reason-2">
+                        Makes some reference to appropriate outputs or outcomes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="delivery-budget-reason-3" name="delivery-budget-reason" type="radio"
+                        value="reason-3">
+                      <label class="govuk-label govuk-radios__label" for="delivery-budget-reason-3">
+                        Provides some sound estimations and numeric targets to support their thinking
+                      </label>
+                    </div>
+                    {% elseif data['delivery-budget'] == "4" %}
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="delivery-budget-reason" name="delivery-budget-reason" type="radio"
+                        value="reason-1">
+                      <label class="govuk-label govuk-radios__label" for="delivery-budget-reason">
+                        There is some evidence linked to the proposed outputs and outcomes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="delivery-budget-reason-2" name="delivery-budget-reason" type="radio"
+                        value="reason-2">
+                      <label class="govuk-label govuk-radios__label" for="delivery-budget-reason-2">
+                        Some well-presented thinking and good logic behind the proposed ideas
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="delivery-budget-reason-2" name="delivery-budget-reason" type="radio"
+                        value="reason-3">
+                      <label class="govuk-label govuk-radios__label" for="delivery-budget-reason-2">
+                        Provides a good range of sound estimations and numeric targets to support their thinking
+                      </label>
+                    </div>
+                    {% elseif data['delivery-budget'] == "5" %}
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="delivery-budget-reason" name="delivery-budget-reason" type="radio"
+                        value="reason-1">
+                      <label class="govuk-label govuk-radios__label" for="delivery-budget-reason">
+                        Evidence is robust and clearly linked to proposed outputs and outcomes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="delivery-budget-reason-2" name="delivery-budget-reason" type="radio"
+                        value="reason-2">
+                      <label class="govuk-label govuk-radios__label" for="delivery-budget-reason-2">
+                        Well-presented thinking and sound logic behind the proposed ideas
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="delivery-budget-reason-2" name="delivery-budget-reason" type="radio"
+                        value="reason-2">
+                      <label class="govuk-label govuk-radios__label" for="delivery-budget-reason-2">
+                        Provides an excellent range of sound estimations and numeric targets to fully support their thinking
+                      </label>
+                    </div>
+                    {% endif %}   
+                  </div>
+
+                </fieldset>
+                <button class="govuk-button govuk-button--secondary govuk-!-margin-top-7"
+                  data-module="govuk-button">
+                  Add an additional comment
+                </button>
+              </div>
+            </div>
+
+            {% else %}
+
+            <div id="score-edit" class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="delivery-budget-5" name="delivery-budget" type="radio" value="5">
+                <label class="govuk-label govuk-radios__label" for="delivery-budget-5">
+                  <span class="govuk-!-font-weight-bold">5</span> Excellent
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="delivery-budget-4" name="delivery-budget" type="radio" value="4">
+                <label class="govuk-label govuk-radios__label" for="delivery-budget-4">
+                  <span class="govuk-!-font-weight-bold">4</span> Good
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="delivery-budget-3" name="delivery-budget" type="radio" value="3">
+                <label class="govuk-label govuk-radios__label" for="delivery-budget-3">
+                  <span class="govuk-!-font-weight-bold">3</span> Satisfactory
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="delivery-budget-2" name="delivery-budget" type="radio" value="2">
+                <label class="govuk-label govuk-radios__label" for="delivery-budget-2">
+                  <span class="govuk-!-font-weight-bold">2</span> Moderate
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="delivery-budget-1" name="delivery-budget" type="radio" value="1">
+                <label class="govuk-label govuk-radios__label" for="delivery-budget-1">
+                  <span class="govuk-!-font-weight-bold">1</span> Limited
+                </label>
+              </div>
+            </div>
+
+            <div class="govuk-button-group govuk-!-margin-top-7">
+              <button class="govuk-button" data-module="govuk-button">
+                Save score
+              </button>
+
+
+            </div>
+            {% endif %}
+
+          </form>
+
+      </div>
+
+      <div class="govuk-form-group">
+        <h3 class="govuk-!-margin-top-4 govuk-label-wrapper"><label class="govuk-label govuk-label--m"
+            for="account-number">
+            Total score for project management
+          </label>
+        </h3>
+        {% if data['delivery-time'] and data['delivery-budget'] %}
+        {% set scoreTime = data['delivery-time'] | int %}
+        {% set scoreBudget = data['delivery-budget'] | int %}
+        <p>Your total for this question: <span style="float:right"><a id="score-toggle" href="">edit</a></span></p>
+        <p class="govuk-!-font-weight-bold govuk-!-font-size-36">{{ scoreTime + scoreBudget }}/10</p>
+        {% else %}
+        <p class="govuk-!-margin-top-4">You have not scored all sections yet.</p>
+        {% endif %}
+      </div>
+
+      <form action="/baseline-assessment/risk-1" method="POST" class="form">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h3 class="govuk-!-margin-top-4 govuk-heading-m">
+                Do you want to submit your final score for this section? </h3>
+            </legend>
+            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="project-management-complete"
+                  name="project-management-complete" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="project-management-complete">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="project-management-complete-2"
+                  name="project-management-complete" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="project-management-complete-2">
+                  No
+                </label>
+              </div>
+            </div>
+
+            <button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">
+              Confirm total score
+            </button>
+
+
+          </fieldset>
+        </div>
+      </form>
+
+    </div>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third scoring">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          
+          <h2 class="govuk-fieldset__heading">
+              Fund information
+          </h2>
+      </legend>
+
+      <h3 class="govuk-!-margin-top-6 govuk-!-margin-bottom-0 govuk-heading-s">Reference:</h3>
+      <p class="govuk-!-margin-top-0 govuk-body">COF/2/0047</p>
+
+      <h3 class="govuk-!-margin-top-4 govuk-!-margin-bottom-0 govuk-heading-s">Fund:</h3>
+      <p class="govuk-!-margin-top-0 govuk-body">Community ownership fund</p>
+
+      <h3 class="govuk-!-margin-bottom-0 govuk-heading-s">Round:</h3>
+      <p class="govuk-!-margin-top-0 govuk-body">2</p>
+    </div>
+
+  </div>
+
+{% endblock %}
+

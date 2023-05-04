@@ -1,0 +1,553 @@
+{% extends "layout_unbranded.html" %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+tag: {
+text: "prototype"
+},
+html: 'This is not a live service. This is a service currently being designed. '
+}) }}
+
+<a href="index.html" class="govuk-back-link">Back to <span class="govuk-!-font-weight-bold">overall assessment view</span></a>
+{% endblock%}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds question">
+
+        <h1 class="govuk-heading-xl">Risk - 3 of 3</h1>
+
+        <details class="govuk-!-margin-top-6 govuk-details" data-module="govuk-details">
+        
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Help me with guidance on scoring this section
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <h3 class="govuk-!-margin-top-2 govuk-heading-s">Applications will be assessed on the following
+              4 criteria:</h3>
+  
+            <p class="govuk-!-margin-top-0 govuk-body"><strong>1. Strategic case:</strong> applicants should
+              show that
+              without intervention the asset would be lost to the community, the impacts that this would
+              have and support they have from the community and other partners.
+            </p>
+  
+            <p class="govuk-!-margin-top-0 govuk-body"><strong>2. Management case:</strong> applicants
+              should show the
+              objectives and deliverability of the project and how the asset or amenity will be run
+              sustainably.
+            </p>
+  
+            <p class="govuk-!-margin-top-0 govuk-body"><strong>3. Potential to deliver community
+                benefit:</strong> using the
+              outcomes framework, applicants should show how the asset will deliver community benefits
+              under community ownership.
+            </p>
+  
+            <p class="govuk-!-margin-top-0 govuk-body"><strong>4. Added value of the community asset based
+                on
+                community need:</strong> using local data and information on community need, applicants
+              should be
+              able to show the added value of the asset or amenity to the community.
+            </p>
+  
+            <a href="#" class="govuk-link govuk-link--no-visited-state">Read the full guidance</a>
+  
+          </div>
+        </details>
+
+        <div>
+            <p>This is some guidance on the scoring, because you need to read both of these - and then score them
+                separately (perhaps for a total)</p>
+
+
+            <ul class="govuk-list govuk-list--bullet">
+                <li>
+                    <a class="govuk-link" href="#answer-section-1">Tell us how you identified the risks in your risk register</a>
+                </li>
+                <li>
+                    <a class="govuk-link" href="#answer-section-2">Tell us how you will manage the risks in your risk register</a>
+                </li>
+            </ul>
+        </div>
+
+
+        <div class="answer-section govuk-!-margin-top-9 govuk-!-padding-top-8 govuk-!-padding-bottom-0"
+            id="answer-section-1">
+
+            <h2 class="govuk-heading-l">Tell us how you identified the risks in your risk register</h2>
+
+            <p class="govuk-!-padding-top-4">All projects involve decision-making and stakeholder
+                relationship management at different points in the project lifecycle and at a variety of different
+                levels.</p>
+
+            <p class="govuk-!-padding-top-4 govuk-!-padding-bottom-4">All projects involve decision-making and
+                stakeholder
+                relationship management at different points in the project lifecycle and at a variety of different
+                levels.</p>
+                <div id="risk-identification">
+                    <h3 class="govuk-heading-m govuk-!-margin-top-7">Score this section</h3>
+                    <p>Give this answer a score out of 5. This will automatically contribute to the overall score for the
+                      assessment.</p>
+                    <form action="#risk-identification" method="" class="form">
+          
+                      {% if data['risk-identification'] %}
+          
+                      <div id="score-view">
+                        <p>You scored this section a: <span style="float:right"><a id="score-toggle" href="">edit</a></span>
+                        </p>
+                        <p class="govuk-!-font-weight-bold govuk-!-font-size-36">{{ data['risk-identification'] }}/5</p>
+                        <div class="govuk-form-group govuk-!-margin-top-7">
+                          <fieldset class="govuk-fieldset">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                              What was the reasoning for this score?
+                            </legend>
+                            <div class="govuk-radios" data-module="govuk-radios">
+                              {% if data['risk-identification'] == "1" %}
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="risk-identification-reason" name="risk-identification-reason" type="radio"
+                                  value="reason-1">
+                                <label class="govuk-label govuk-radios__label" for="risk-identification-reason">
+                                  Limited evidence or suitable data sources provided
+                                </label>
+                              </div>
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="risk-identification-reason-2" name="risk-identification-reason" type="radio"
+                                  value="reason-2">
+                                <label class="govuk-label govuk-radios__label" for="risk-identification-reason-2">
+                                  Has no appropriate outputs or outcomes
+                                </label>
+                              </div>
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="risk-identification-reason-3" name="risk-identification-reason" type="radio"
+                                  value="reason-3">
+                                <label class="govuk-label govuk-radios__label" for="risk-identification-reason-3">
+                                  Lacks realism behind proposed ideas
+                                </label>
+                              </div>
+                              {% elseif data['risk-identification'] == "2" %}
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="risk-identification-reason" name="risk-identification-reason" type="radio"
+                                  value="reason-1">
+                                <label class="govuk-label govuk-radios__label" for="risk-identification-reason">
+                                  Provides little evidence and relevant data sources to support some of their proposed ideas
+                                </label>
+                              </div>
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="risk-identification-reason-2" name="risk-identification-reason" type="radio"
+                                  value="reason-2">
+                                <label class="govuk-label govuk-radios__label" for="risk-identification-reason-2">
+                                  Makes few references to appropriate outputs or outcomes
+                                </label>
+                              </div>
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="risk-identification-reason-2" name="risk-identification-reason" type="radio"
+                                  value="reason-2">
+                                <label class="govuk-label govuk-radios__label" for="risk-identification-reason-2">
+                                  Has some realistic ideas, others are unrealistic
+                                </label>
+                              </div>
+                              {% elseif data['risk-identification'] == "3" %}
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="risk-identification-reason" name="risk-identification-reason" type="radio"
+                                  value="reason-1">
+                                <label class="govuk-label govuk-radios__label" for="risk-identification-reason">
+                                  Provides some evidence and relevant data sources to support proposed ideas
+                                </label>
+                              </div>
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="risk-identification-reason-2" name="risk-identification-reason" type="radio"
+                                  value="reason-2">
+                                <label class="govuk-label govuk-radios__label" for="risk-identification-reason-2">
+                                  Makes some reference to appropriate outputs or outcomes
+                                </label>
+                              </div>
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="risk-identification-reason-3" name="risk-identification-reason" type="radio"
+                                  value="reason-3">
+                                <label class="govuk-label govuk-radios__label" for="risk-identification-reason-3">
+                                  Provides some sound estimations and numeric targets to support their thinking
+                                </label>
+                              </div>
+                              {% elseif data['risk-identification'] == "4" %}
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="risk-identification-reason" name="risk-identification-reason" type="radio"
+                                  value="reason-1">
+                                <label class="govuk-label govuk-radios__label" for="risk-identification-reason">
+                                  There is some evidence linked to the proposed outputs and outcomes
+                                </label>
+                              </div>
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="risk-identification-reason-2" name="risk-identification-reason" type="radio"
+                                  value="reason-2">
+                                <label class="govuk-label govuk-radios__label" for="risk-identification-reason-2">
+                                  Some well-presented thinking and good logic behind the proposed ideas
+                                </label>
+                              </div>
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="risk-identification-reason-2" name="risk-identification-reason" type="radio"
+                                  value="reason-3">
+                                <label class="govuk-label govuk-radios__label" for="risk-identification-reason-2">
+                                  Provides a good range of sound estimations and numeric targets to support their thinking
+                                </label>
+                              </div>
+                              {% elseif data['risk-identification'] == "5" %}
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="risk-identification-reason" name="risk-identification-reason" type="radio"
+                                  value="reason-1">
+                                <label class="govuk-label govuk-radios__label" for="risk-identification-reason">
+                                  Evidence is robust and clearly linked to proposed outputs and outcomes
+                                </label>
+                              </div>
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="risk-identification-reason-2" name="risk-identification-reason" type="radio"
+                                  value="reason-2">
+                                <label class="govuk-label govuk-radios__label" for="risk-identification-reason-2">
+                                  Well-presented thinking and sound logic behind the proposed ideas
+                                </label>
+                              </div>
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="risk-identification-reason-2" name="risk-identification-reason" type="radio"
+                                  value="reason-2">
+                                <label class="govuk-label govuk-radios__label" for="risk-identification-reason-2">
+                                  Provides an excellent range of sound estimations and numeric targets to fully support their thinking
+                                </label>
+                              </div>
+                              {% endif %}   
+                            </div>
+          
+                          </fieldset>
+                          <button class="govuk-button govuk-button--secondary govuk-!-margin-top-7"
+                            data-module="govuk-button">
+                            Add an additional comment
+                          </button>
+                        </div>
+                      </div>
+          
+                      {% else %}
+          
+                      <div id="score-edit" class="govuk-radios" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="risk-identification-5" name="risk-identification" type="radio" value="5">
+                          <label class="govuk-label govuk-radios__label" for="risk-identification-5">
+                            <span class="govuk-!-font-weight-bold">5</span> Excellent
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="risk-identification-4" name="risk-identification" type="radio" value="4">
+                          <label class="govuk-label govuk-radios__label" for="risk-identification-4">
+                            <span class="govuk-!-font-weight-bold">4</span> Good
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="risk-identification-3" name="risk-identification" type="radio" value="3">
+                          <label class="govuk-label govuk-radios__label" for="risk-identification-3">
+                            <span class="govuk-!-font-weight-bold">3</span> Satisfactory
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="risk-identification-2" name="risk-identification" type="radio" value="2">
+                          <label class="govuk-label govuk-radios__label" for="risk-identification-2">
+                            <span class="govuk-!-font-weight-bold">2</span> Moderate
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="risk-identification-1" name="risk-identification" type="radio" value="1">
+                          <label class="govuk-label govuk-radios__label" for="risk-identification-1">
+                            <span class="govuk-!-font-weight-bold">1</span> Limited
+                          </label>
+                        </div>
+                      </div>
+          
+                      <div class="govuk-button-group govuk-!-margin-top-7">
+                        <button class="govuk-button" data-module="govuk-button">
+                          Save score
+                        </button>
+          
+          
+                      </div>
+                      {% endif %}
+          
+                    </form>
+                </div>
+        </div>
+
+        <div class="answer-section govuk-!-margin-top-9 govuk-!-padding-top-8 govuk-!-padding-bottom-0"
+            id="answer-section-1">
+
+            <h2 class="govuk-heading-l">Tell us how you identified the risks in your risk register</h2>
+
+            <p class="govuk-!-padding-top-4">All projects involve decision-making and stakeholder
+                relationship management at different points in the project lifecycle and at a variety of different
+                levels.</p>
+
+            <p class="govuk-!-padding-top-4 govuk-!-padding-bottom-4">All projects involve decision-making and
+                stakeholder
+                relationship management at different points in the project lifecycle and at a variety of different
+                levels.</p>
+
+                <div id="risk-management">
+                    <h3 class="govuk-heading-m govuk-!-margin-top-7">Score this section</h3>
+                    <p>Give this answer a score out of 5. This will automatically contribute to the overall score for the
+                      assessment.</p>
+                    <form action="#risk-management" method="" class="form">
+          
+                      {% if data['risk-management'] %}
+          
+                      <div id="score-view">
+                        <p>You scored this section a: <span style="float:right"><a id="score-toggle" href="">edit</a></span>
+                        </p>
+                        <p class="govuk-!-font-weight-bold govuk-!-font-size-36">{{ data['risk-management'] }}</p>
+                        <div class="govuk-form-group govuk-!-margin-top-7">
+                          <fieldset class="govuk-fieldset">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                              What was the reasoning for this score?
+                            </legend>
+                            <div class="govuk-radios" data-module="govuk-radios">
+                              {% if data['risk-management'] == "1" %}
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="risk-management-reason" name="risk-management-reason" type="radio"
+                                  value="reason-1">
+                                <label class="govuk-label govuk-radios__label" for="risk-management-reason">
+                                  Limited evidence or suitable data sources provided
+                                </label>
+                              </div>
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="risk-management-reason-2" name="risk-management-reason" type="radio"
+                                  value="reason-2">
+                                <label class="govuk-label govuk-radios__label" for="risk-management-reason-2">
+                                  Has no appropriate outputs or outcomes
+                                </label>
+                              </div>
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="risk-management-reason-3" name="risk-management-reason" type="radio"
+                                  value="reason-3">
+                                <label class="govuk-label govuk-radios__label" for="risk-management-reason-3">
+                                  Lacks realism behind proposed ideas
+                                </label>
+                              </div>
+                              {% elseif data['risk-management'] == "2" %}
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="risk-management-reason" name="risk-management-reason" type="radio"
+                                  value="reason-1">
+                                <label class="govuk-label govuk-radios__label" for="risk-management-reason">
+                                  Provides little evidence and relevant data sources to support some of their proposed ideas
+                                </label>
+                              </div>
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="risk-management-reason-2" name="risk-management-reason" type="radio"
+                                  value="reason-2">
+                                <label class="govuk-label govuk-radios__label" for="risk-management-reason-2">
+                                  Makes few references to appropriate outputs or outcomes
+                                </label>
+                              </div>
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="risk-management-reason-2" name="risk-management-reason" type="radio"
+                                  value="reason-2">
+                                <label class="govuk-label govuk-radios__label" for="risk-management-reason-2">
+                                  Has some realistic ideas, others are unrealistic
+                                </label>
+                              </div>
+                              {% elseif data['risk-management'] == "3" %}
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="risk-management-reason" name="risk-management-reason" type="radio"
+                                  value="reason-1">
+                                <label class="govuk-label govuk-radios__label" for="risk-management-reason">
+                                  Provides some evidence and relevant data sources to support proposed ideas
+                                </label>
+                              </div>
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="risk-management-reason-2" name="risk-management-reason" type="radio"
+                                  value="reason-2">
+                                <label class="govuk-label govuk-radios__label" for="risk-management-reason-2">
+                                  Makes some reference to appropriate outputs or outcomes
+                                </label>
+                              </div>
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="risk-management-reason-3" name="risk-management-reason" type="radio"
+                                  value="reason-3">
+                                <label class="govuk-label govuk-radios__label" for="risk-management-reason-3">
+                                  Provides some sound estimations and numeric targets to support their thinking
+                                </label>
+                              </div>
+                              {% elseif data['risk-management'] == "4" %}
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="risk-management-reason" name="risk-management-reason" type="radio"
+                                  value="reason-1">
+                                <label class="govuk-label govuk-radios__label" for="risk-management-reason">
+                                  There is some evidence linked to the proposed outputs and outcomes
+                                </label>
+                              </div>
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="risk-management-reason-2" name="risk-management-reason" type="radio"
+                                  value="reason-2">
+                                <label class="govuk-label govuk-radios__label" for="risk-management-reason-2">
+                                  Some well-presented thinking and good logic behind the proposed ideas
+                                </label>
+                              </div>
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="risk-management-reason-2" name="risk-management-reason" type="radio"
+                                  value="reason-3">
+                                <label class="govuk-label govuk-radios__label" for="risk-management-reason-2">
+                                  Provides a good range of sound estimations and numeric targets to support their thinking
+                                </label>
+                              </div>
+                              {% elseif data['risk-management'] == "5" %}
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="risk-management-reason" name="risk-management-reason" type="radio"
+                                  value="reason-1">
+                                <label class="govuk-label govuk-radios__label" for="risk-management-reason">
+                                  Evidence is robust and clearly linked to proposed outputs and outcomes
+                                </label>
+                              </div>
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="risk-management-reason-2" name="risk-management-reason" type="radio"
+                                  value="reason-2">
+                                <label class="govuk-label govuk-radios__label" for="risk-management-reason-2">
+                                  Well-presented thinking and sound logic behind the proposed ideas
+                                </label>
+                              </div>
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="risk-management-reason-2" name="risk-management-reason" type="radio"
+                                  value="reason-2">
+                                <label class="govuk-label govuk-radios__label" for="risk-management-reason-2">
+                                  Provides an excellent range of sound estimations and numeric targets to fully support their thinking
+                                </label>
+                              </div>
+                              {% endif %}   
+                            </div>
+          
+                          </fieldset>
+                          <button class="govuk-button govuk-button--secondary govuk-!-margin-top-7"
+                            data-module="govuk-button">
+                            Add an additional comment
+                          </button>
+                        </div>
+                      </div>
+          
+                      {% else %}
+          
+                      <div id="score-edit" class="govuk-radios" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="risk-management-5" name="risk-management" type="radio" value="5">
+                          <label class="govuk-label govuk-radios__label" for="risk-management-5">
+                            <span class="govuk-!-font-weight-bold">5</span> Excellent
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="risk-management-4" name="risk-management" type="radio" value="4">
+                          <label class="govuk-label govuk-radios__label" for="risk-management-4">
+                            <span class="govuk-!-font-weight-bold">4</span> Good
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="risk-management-3" name="risk-management" type="radio" value="3">
+                          <label class="govuk-label govuk-radios__label" for="risk-management-3">
+                            <span class="govuk-!-font-weight-bold">3</span> Satisfactory
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="risk-management-2" name="risk-management" type="radio" value="2">
+                          <label class="govuk-label govuk-radios__label" for="risk-management-2">
+                            <span class="govuk-!-font-weight-bold">2</span> Moderate
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="risk-management-1" name="risk-management" type="radio" value="1">
+                          <label class="govuk-label govuk-radios__label" for="risk-management-1">
+                            <span class="govuk-!-font-weight-bold">1</span> Limited
+                          </label>
+                        </div>
+                      </div>
+          
+                      <div class="govuk-button-group govuk-!-margin-top-7">
+                        <button class="govuk-button" data-module="govuk-button">
+                          Save score
+                        </button>
+          
+          
+                      </div>
+                      {% endif %}
+          
+                    </form>
+                </div>    
+        </div>
+
+        <div class="govuk-form-group">
+          <h3 class="govuk-!-margin-top-4 govuk-label-wrapper"><label class="govuk-label govuk-label--m"
+              for="account-number">
+              Total score for project aims and outcomes
+            </label>
+          </h3>
+          {% if data['risk-identification'] and data['risk-management'] %}
+          {% set scoreRiskIdentification = data['risk-identification'] | int %}
+          {% set scoreRiskManagement = data['risk-management'] | int %}
+          <p>Your total for this question: <span style="float:right"><a id="score-toggle" href="">edit</a></span></p>
+          <p class="govuk-!-font-weight-bold govuk-!-font-size-36">{{ scoreRiskIdentification + scoreRiskManagement }}/10</p>
+          {% else %}
+          <p class="govuk-!-margin-top-4">You have not scored all sections yet.</p>
+          {% endif %}
+        </div>
+
+        <form action="/baseline-assessment/monitoring-evaluation" method="POST" class="form">
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <h3 class="govuk-!-margin-top-4 govuk-heading-m">
+                    Do you want to submit your final score for this section? </h3>
+                </legend>
+                <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="risk-management-complete"
+                      name="risk-management-complete" type="radio" value="yes">
+                    <label class="govuk-label govuk-radios__label" for="risk-management-complete">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="risk-management-complete-2"
+                      name="risk-management-complete" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="risk-management-complete-2">
+                      No
+                    </label>
+                  </div>
+                </div>
+    
+                <button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">
+                  Confirm total score
+                </button>
+    
+    
+              </fieldset>
+            </div>
+          </form>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third scoring">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          
+          <h2 class="govuk-fieldset__heading">
+              Fund information
+          </h2>
+      </legend>
+
+      <h3 class="govuk-!-margin-top-6 govuk-!-margin-bottom-0 govuk-heading-s">Reference:</h3>
+      <p class="govuk-!-margin-top-0 govuk-body">COF/2/0047</p>
+
+      <h3 class="govuk-!-margin-top-4 govuk-!-margin-bottom-0 govuk-heading-s">Fund:</h3>
+      <p class="govuk-!-margin-top-0 govuk-body">Community ownership fund</p>
+
+      <h3 class="govuk-!-margin-bottom-0 govuk-heading-s">Round:</h3>
+      <p class="govuk-!-margin-top-0 govuk-body">2</p>
+    </div>
+
+</div>
+
+{% endblock %}

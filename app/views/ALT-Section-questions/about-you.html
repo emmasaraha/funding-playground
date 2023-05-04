@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+  {{ govukPhaseBanner({
+  tag: {
+  text: "prototype"
+  },
+  html: 'This is not a live service. This is a service currently being designed. '
+  }) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">About you</h1>
+
+      <form class="form" action="about-organisation-01" method="post">
+
+        {% include "includes/questions/applicant-name.html" %}
+
+        {% include "includes/questions/applicant-email.html" %}
+
+        {% include "includes/questions/applicant-phone.html" %}
+
+        {% include "includes/questions/applicant-website.html" %}
+
+        <button class="govuk-button govuk-!-margin-top-5" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+{% endblock %}

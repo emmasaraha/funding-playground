@@ -1,0 +1,83 @@
+{% extends "layout_unbranded.html" %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+tag: {
+text: "prototype"
+},
+html: 'This is not a live service. This is a service currently being designed. '
+}) }}
+
+<a href="index.html" class="govuk-back-link">Back to <span class="govuk-!-font-weight-bold">overall assessment view</span></a>
+
+{% endblock%}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div class="govuk-grid-column-two-thirds question">
+
+      <h1 class="govuk-heading-l">Contact information</h1>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            John Smith
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Email
+          </dt>
+          <dd class="govuk-summary-list__value">
+            johnsmith@organisation.co.uk
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Telephone number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            01234 121233
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Website
+          </dt>
+          <dd class="govuk-summary-list__value">
+            organisation.co.uk
+          </dd>
+        </div>
+      </dl>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third scoring">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          
+          <h2 class="govuk-fieldset__heading">
+              Fund information
+          </h2>
+      </legend>
+
+      <h3 class="govuk-!-margin-top-6 govuk-!-margin-bottom-0 govuk-heading-s">Reference:</h3>
+      <p class="govuk-!-margin-top-0 govuk-body">COF/2/0047</p>
+
+      <h3 class="govuk-!-margin-top-4 govuk-!-margin-bottom-0 govuk-heading-s">Fund:</h3>
+      <p class="govuk-!-margin-top-0 govuk-body">Community ownership fund</p>
+
+      <h3 class="govuk-!-margin-bottom-0 govuk-heading-s">Round:</h3>
+      <p class="govuk-!-margin-top-0 govuk-body">2</p>
+    </div>
+
+  </div>
+
+  {% endblock %}

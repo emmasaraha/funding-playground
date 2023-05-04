@@ -1,0 +1,101 @@
+{% extends "layout_unbranded.html" %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+tag: {
+text: "prototype"
+},
+html: 'This is not a live service. This is a service currently being designed. '
+}) }}
+
+<a href="index.html" class="govuk-back-link">Back to <span class="govuk-!-font-weight-bold">overall assessment view</span></a>
+{% endblock%}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div class="govuk-grid-column-two-thirds question">
+
+      <h1 class="govuk-heading-l">Organisation information</h1>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Organisation
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Organisation A
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Organisation address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p class="govuk-body">123 Garden Lane</p>
+            <p class="govuk-body">City</p>
+            <p class="govuk-body">County</p>
+            <p class="govuk-body">AB12 3CD</p>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Organisation type
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Limited Company
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Registration number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            1234567
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Accountant
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Jane Brown
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Responsible person
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Dave Walters
+          </dd>
+        </div>
+      </dl>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third scoring">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          
+          <h2 class="govuk-fieldset__heading">
+              Fund information
+          </h2>
+      </legend>
+
+      <h3 class="govuk-!-margin-top-6 govuk-!-margin-bottom-0 govuk-heading-s">Reference:</h3>
+      <p class="govuk-!-margin-top-0 govuk-body">COF/2/0047</p>
+
+      <h3 class="govuk-!-margin-top-4 govuk-!-margin-bottom-0 govuk-heading-s">Fund:</h3>
+      <p class="govuk-!-margin-top-0 govuk-body">Community ownership fund</p>
+
+      <h3 class="govuk-!-margin-bottom-0 govuk-heading-s">Round:</h3>
+      <p class="govuk-!-margin-top-0 govuk-body">2</p>
+    </div>
+
+  </div>
+
+  {% endblock %}
